@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,QAAQ;EACN,KAAK,EAAE,KAAK;EACZ,gBAAgB,EAAE,KAAK;EACvB,aAAa,EAAE,IAAI;EACnB,SAAS,EAAE,GAAG;EACd,WAAW,EAAE,IAAI;EACjB,OAAO,EAAE,KAAK",
+"sources": ["../scss/_resetbutton.scss"],
+"names": [],
+"file": "main.css"
+}
