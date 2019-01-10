@@ -7,4 +7,36 @@
   z-index: 99999;
 }
 
+.pointtavle {
+  border: 5px solid #000;
+  display: block;
+  position: relative;
+  text-align: center;
+  width: 20%;
+  margin-left: 39%;
+}
+
+.counter {
+  display: inline;
+  font-size: 4em;
+}
+
+.reset {
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  font-size: 2em;
+  margin-left: 20px;
+  z-index: 99999;
+  margin-left: 46%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.game {
+  border: 5px solid #000;
+  width: 90%;
+  margin-left: 5%;
+}
+
 /*# sourceMappingURL=main.css.map */
