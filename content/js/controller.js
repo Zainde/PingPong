@@ -1,3 +1,5 @@
+num1=0
+num2=0
 document.addEventListener('keydown', (event) => {
   const keyName = event.key;
 
@@ -113,6 +115,25 @@ if (x <= 0 || x >= 1770) {
     ball.style.left = parseInt(ball.style.left) - 1 + "vw";
   }
     ball.style.top = parseInt(ball.style.top) + ydegrees + "vh";
+
+
+    if (parseInt(ball.style.left) < 0) {
+      document.getElementById("scoreboard2").innerHTML = ++num1;
+      ball.style.top = 25+"vh"
+      ball.style.left = 50+"vw"
+      /*if (num1 = 9) {
+        reset();
+      }*/
+      
+    } else if (parseInt(ball.style.left) > 85) {
+      document.getElementById("scoreboard1").innerHTML = ++num2;
+      ball.style.top = 25+"vh"
+      ball.style.left = 50+"vw"
+      /*if (num2 = 9) {
+        reset();
+      }*/
+    }
+
 }
 
 
