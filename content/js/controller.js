@@ -106,7 +106,7 @@ if (x <= 100 || x >= 1770) {
       vx = vx * -1;
     }
   }
-  if (y <= 178 && ydegrees < 0 || y >= 637 && ydegrees > 0) {
+  if (parseInt(ball.style.top) <= 18 && ydegrees < 0 || parseInt(ball.style.top) >= 67 && ydegrees > 0) {
     ydegrees = ydegrees * -1;
     // console.log("less");
   }
