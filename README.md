@@ -8,9 +8,9 @@ pointtavle - tælle point for begge hold.
 
 reset knap - skal restart spillet og nulstille pointtavle.
 
-player1 - skal kunne køre op og ned og forhindre bolden fra at ramme den bagerste væg, player1 er placeret i venstre side.
+player1 - skal kunne køre op og ned og forhindre bolden fra at ramme den bagerste væg, player1 er placeret i venstre side, du styre player1 med w og s.
 
-player2 - skal kunne køre op og ned og forhindre bolden fra at ramme den bagerste væg, player2 er placeret i højre side.
+player2 - skal kunne køre op og ned og forhindre bolden fra at ramme den bagerste væg, player2 er placeret i højre side, du styre player1 med ArrowUp og ArrowDown.
 
 bolden - bolden er placeret i midten og når spillet startes køre den random rundt på kortet indtil den ramme en af enderne.
 
