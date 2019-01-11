@@ -1,6 +1,19 @@
 # PingPong
 Make a pingpong game
 
+Forklaring:
+Vi laver et pong spil i kodesprogene HTML, svg, css og Javascript, vi har fået tildelt 15 dage til opgaven.
+
+pointtavle - tælle point for begge hold.
+
+reset knap - skal restart spillet og nulstille pointtavle.
+
+player1 - skal kunne køre op og ned og forhindre bolden fra at ramme den bagerste væg, player1 er placeret i venstre side.
+
+player2 - skal kunne køre op og ned og forhindre bolden fra at ramme den bagerste væg, player2 er placeret i højre side.
+
+bolden - bolden er placeret i midten og når spillet startes køre den random rundt på kortet indtil den ramme en af enderne.
+
 tidsplan:
 Opstart: inddele roller, lave scrum board og krav spec.
 9/1-19 kl 12:00
