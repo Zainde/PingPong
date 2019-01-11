@@ -90,18 +90,21 @@ function ballSpeed() {
   y = ball.y;
   // console.log(y);
 // console.log(x, y);
-if (x <= 100 || x >= 1770) {
+if (x <= 0 || x >= 1770) {
     vx = vx * -1;
     // console.log(1);
   }
-  if (parseInt(ball.style.left) >= parseInt(p2.style.left) && parseInt(ball.style.left) <= parseInt(p2.style.left)) {
-    if (parseInt(ball.style.top) <= parseInt(p2.style.top) + 5 && parseInt(ball.style.top) >= parseInt(p2.style.top) - 3) {
-      // console.log("true");
+  console.log(ball.style.top, p2.style.top);
+  console.log(ball.style.left, p2.style.left);
+
+  if (parseInt(ball.style.left) >= parseInt(p2.style.left) + 4 && parseInt(ball.style.left) <= parseInt(p2.style.left) + 10) {
+    if (parseInt(ball.style.top) <= parseInt(p2.style.top) + 5 && parseInt(ball.style.top) >= parseInt(p2.style.top) - 5) {
+      console.log("true");
       vx = vx * -1;
     }
   }
-  if (parseInt(ball.style.left) >= parseInt(p1.style.left) && parseInt(ball.style.left) <= parseInt(p1.style.left) + 3) {
-    if (parseInt(ball.style.top) <= parseInt(p1.style.top) + 5 && parseInt(ball.style.top) >= parseInt(p1.style.top) - 3) {
+  if (parseInt(ball.style.left) >= parseInt(p1.style.left) + 6 && parseInt(ball.style.left) <= parseInt(p1.style.left) + 7) {
+    if (parseInt(ball.style.top) <= parseInt(p1.style.top) + 5 && parseInt(ball.style.top) >= parseInt(p1.style.top) - 5) {
       // console.log("true");
       vx = vx * -1;
     }
@@ -118,7 +121,7 @@ if (x <= 100 || x >= 1770) {
     ball.style.left = parseInt(ball.style.left) - 1 + "vw";
     // "go left"
   }
-    ball.style.top = parseInt(ball.style.top) + ydegrees + "vh";
+    ball.style.top = parseInt(ball.style.top) + 0 + "vh";
     // "go up"
 }
 
@@ -126,6 +129,6 @@ if (x <= 100 || x >= 1770) {
 setInterval(()=> {
   // console.log("interval start");
   ballSpeed();
-}, speed);
+}, 30);
 
 // console.dir(Array.from(document.getElementsByClassName('game'))[0]);
