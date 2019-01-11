@@ -95,12 +95,12 @@ if (x <= 0 || x >= 1770) {
   }
 
   if (parseInt(ball.style.left) >= parseInt(p2.style.left) + 4 && parseInt(ball.style.left) <= parseInt(p2.style.left) + 10) {
-    if (parseInt(ball.style.top) <= parseInt(p2.style.top) + 5 && parseInt(ball.style.top) >= parseInt(p2.style.top) - 5) {
+    if (parseInt(ball.style.top) <= parseInt(p2.style.top) + 8 && parseInt(ball.style.top) >= parseInt(p2.style.top) - 5) {
       vx = vx * -1;
     }
   }
   if (parseInt(ball.style.left) >= parseInt(p1.style.left) + 6 && parseInt(ball.style.left) <= parseInt(p1.style.left) + 7) {
-    if (parseInt(ball.style.top) <= parseInt(p1.style.top) + 5 && parseInt(ball.style.top) >= parseInt(p1.style.top) - 6) {
+    if (parseInt(ball.style.top) <= parseInt(p1.style.top) + 8 && parseInt(ball.style.top) >= parseInt(p1.style.top) - 6) {
       vx = vx * -1;
     }
   }
