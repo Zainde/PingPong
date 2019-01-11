@@ -1,10 +1,10 @@
 document.addEventListener('keydown', (event) => {
   const keyName = event.key;
-  var out = document.getElementById('output');
-var x = event.key;
+  // var out = document.getElementById('output');
+// var x = event.key;
 
 if(keyName == "W" || keyName == "w"){
-  console.log(p1.style.top);
+  // console.log(p1.style.top);
   if (p1.style.top <= "178px") {
     return;
   } else {
@@ -90,13 +90,18 @@ if (x <= 100 || x >= 1770) {
     vx = vx * -1;
     // console.log(1);
   }
-  if (parseInt(ball.style.left) >= parseInt(p2.style.left) - 50 && parseInt(ball.style.left) <= parseInt(p2.style.left) + 50) {
-    if (parseInt(ball.style.top) <= parseInt(p2.style.top) + 50 && parseInt(ball.style.top) >= parseInt(p2.style.top) - 50) {
+  if (parseInt(ball.style.left) >= parseInt(p2.style.left) && parseInt(ball.style.left) <= parseInt(p2.style.left) + 50) {
+    if (parseInt(ball.style.top) <= parseInt(p2.style.top) + 75 && parseInt(ball.style.top) >= parseInt(p2.style.top) - 40) {
       console.log("true");
       vx = vx * -1;
     }
   }
-
+  if (parseInt(ball.style.left) >= parseInt(p1.style.left) && parseInt(ball.style.left) <= parseInt(p1.style.left) + 50) {
+    if (parseInt(ball.style.top) <= parseInt(p1.style.top) + 75 && parseInt(ball.style.top) >= parseInt(p1.style.top) - 40) {
+      console.log("true");
+      vx = vx * -1;
+    }
+  }
   if (y <= 178 && ydegrees < 0 || y >= 637 && ydegrees > 0) {
     ydegrees = ydegrees * -1;
     // console.log("less");
@@ -109,7 +114,7 @@ if (x <= 100 || x >= 1770) {
     ball.style.left = parseInt(ball.style.left) - 1 + "px";
     // "go left"
   }
-    ball.style.top = parseInt(ball.style.top) + 0 + "px";
+    ball.style.top = parseInt(ball.style.top) + ydegrees + "px";
     // "go up"
 }
 
@@ -117,6 +122,6 @@ if (x <= 100 || x >= 1770) {
 setInterval(()=> {
   // console.log("interval start");
   ballSpeed();
-}, 1);
+}, speed);
 
 // console.dir(Array.from(document.getElementsByClassName('game'))[0]);
