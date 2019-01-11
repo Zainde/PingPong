@@ -121,7 +121,7 @@ if (x <= 0 || x >= 1770) {
     ball.style.left = parseInt(ball.style.left) - 1 + "vw";
     // "go left"
   }
-    ball.style.top = parseInt(ball.style.top) + 0 + "vh";
+    ball.style.top = parseInt(ball.style.top) + ydegrees + "vh";
     // "go up"
 }
 
