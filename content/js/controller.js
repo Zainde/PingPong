@@ -121,17 +121,17 @@ if (x <= 0 || x >= 1770) {
       document.getElementById("scoreboard2").innerHTML = ++num1;
       ball.style.top = 25+"vh"
       ball.style.left = 50+"vw"
-      /*if (num1 = 9) {
+      if (num1 == 10) {
         reset();
-      }*/
+      }
       
     } else if (parseInt(ball.style.left) > 85) {
       document.getElementById("scoreboard1").innerHTML = ++num2;
       ball.style.top = 25+"vh"
       ball.style.left = 50+"vw"
-      /*if (num2 = 9) {
+      if (num2 == 10) {
         reset();
-      }*/
+      }
     }
 
 }
