@@ -7,7 +7,7 @@ document.addEventListener('keydown', (event) => {
 
 if(keyName == "W" || keyName == "w"){
   // console.log(p1.style.top);
-  if (p1.style.top <= "178px") {
+  if (parseInt(p1.style.top) <= 0) {
     return;
   } else {
     p1.style.top = parseInt(p1.style.top) - 5 + "vh";
@@ -16,7 +16,7 @@ if(keyName == "W" || keyName == "w"){
 }
 
 if(keyName == "S" || keyName == "s"){
-  if (p1.style.top >= "637") {
+  if (parseInt(p1.style.top) >= 45) {
     return;
   } else {
     p1.style.top = parseInt(p1.style.top) + 5 + "vh";
@@ -25,7 +25,7 @@ if(keyName == "S" || keyName == "s"){
 }
 
 if(keyName == "38" || keyName == "ArrowUp"){
-  if (p2.style.top <= "178px") {
+  if (parseInt(p2.style.top) <= 0) {
     return;
   } else {
     p2.style.top = parseInt(p2.style.top) - 5 + "vh";
@@ -34,7 +34,7 @@ if(keyName == "38" || keyName == "ArrowUp"){
 }
 
 if(keyName == "40" || keyName == "ArrowDown"){
-  if (p2.style.top >= "637px") {
+  if (parseInt(p2.style.top) >= 45) {
     return;
   } else{
   p2.style.top = parseInt(p2.style.top) + 5 + "vh";
@@ -106,7 +106,7 @@ if (x <= 100 || x >= 1770) {
       vx = vx * -1;
     }
   }
-  if (parseInt(ball.style.top) <= 18 && ydegrees < 0 || parseInt(ball.style.top) >= 67 && ydegrees > 0) {
+  if (parseInt(ball.style.top) <= 0 && ydegrees < 0 || parseInt(ball.style.top) >= 50 && ydegrees > 0) {
     ydegrees = ydegrees * -1;
     // console.log("less");
   }
