@@ -1,5 +1,7 @@
 document.addEventListener('keydown', (event) => {
   const keyName = event.key;
+
+  // console.log(event.key);
   // var out = document.getElementById('output');
 // var x = event.key;
 
@@ -8,7 +10,7 @@ if(keyName == "W" || keyName == "w"){
   if (p1.style.top <= "178px") {
     return;
   } else {
-    p1.style.top = parseInt(p1.style.top) - 15 + "px";
+    p1.style.top = parseInt(p1.style.top) - 5 + "vh";
   }
   // console.log(p1.style.top);
 }
@@ -17,7 +19,7 @@ if(keyName == "S" || keyName == "s"){
   if (p1.style.top >= "637") {
     return;
   } else {
-    p1.style.top = parseInt(p1.style.top) + 15 + "px";
+    p1.style.top = parseInt(p1.style.top) + 5 + "vh";
   }
   // console.log(p1.style.top);
 }
@@ -26,7 +28,7 @@ if(keyName == "38" || keyName == "ArrowUp"){
   if (p2.style.top <= "178px") {
     return;
   } else {
-    p2.style.top = parseInt(p2.style.top) - 15 + "px";
+    p2.style.top = parseInt(p2.style.top) - 5 + "vh";
   }
   // console.log(p2.style.top);
 }
@@ -35,7 +37,7 @@ if(keyName == "40" || keyName == "ArrowDown"){
   if (p2.style.top >= "637px") {
     return;
   } else{
-  p2.style.top = parseInt(p2.style.top) + 15 + "px";
+  p2.style.top = parseInt(p2.style.top) + 5 + "vh";
   }
   // console.log(p2.style.top);
 }
@@ -80,25 +82,27 @@ if (ydegrees < 1 && ydegrees > -1) {
     ydegrees = 1;
   }
 }
-console.log(parseInt(p2.style.left));
-console.log(parseInt(ball.style.left), parseInt(p2.style.left)  - 25, parseInt(ball.style.left)  + 25);
+// console.log(ydegrees);
+console.log(parseInt(p1.style.left) + 5, parseInt(ball.style.left));
 function ballSpeed() {
+  // console.log(ball.style.left);
   x = ball.x;
   y = ball.y;
+  // console.log(y);
 // console.log(x, y);
 if (x <= 100 || x >= 1770) {
     vx = vx * -1;
     // console.log(1);
   }
-  if (parseInt(ball.style.left) >= parseInt(p2.style.left) && parseInt(ball.style.left) <= parseInt(p2.style.left) + 50) {
-    if (parseInt(ball.style.top) <= parseInt(p2.style.top) + 75 && parseInt(ball.style.top) >= parseInt(p2.style.top) - 40) {
-      console.log("true");
+  if (parseInt(ball.style.left) >= parseInt(p2.style.left) && parseInt(ball.style.left) <= parseInt(p2.style.left)) {
+    if (parseInt(ball.style.top) <= parseInt(p2.style.top) + 5 && parseInt(ball.style.top) >= parseInt(p2.style.top) - 3) {
+      // console.log("true");
       vx = vx * -1;
     }
   }
-  if (parseInt(ball.style.left) >= parseInt(p1.style.left) && parseInt(ball.style.left) <= parseInt(p1.style.left) + 50) {
-    if (parseInt(ball.style.top) <= parseInt(p1.style.top) + 75 && parseInt(ball.style.top) >= parseInt(p1.style.top) - 40) {
-      console.log("true");
+  if (parseInt(ball.style.left) >= parseInt(p1.style.left) && parseInt(ball.style.left) <= parseInt(p1.style.left) + 3) {
+    if (parseInt(ball.style.top) <= parseInt(p1.style.top) + 5 && parseInt(ball.style.top) >= parseInt(p1.style.top) - 3) {
+      // console.log("true");
       vx = vx * -1;
     }
   }
@@ -108,13 +112,13 @@ if (x <= 100 || x >= 1770) {
   }
   // console.log(ydegrees);
   if (vx > 0) {
-    ball.style.left = parseInt(ball.style.left) + 1 + "px";
+    ball.style.left = parseInt(ball.style.left) + 1 + "vw";
     // "go right"
   } else {
-    ball.style.left = parseInt(ball.style.left) - 1 + "px";
+    ball.style.left = parseInt(ball.style.left) - 1 + "vw";
     // "go left"
   }
-    ball.style.top = parseInt(ball.style.top) + ydegrees + "px";
+    ball.style.top = parseInt(ball.style.top) + ydegrees + "vh";
     // "go up"
 }
 
