@@ -123,6 +123,7 @@ if (x <= 0 || x >= 1770) {
       ball.style.left = 50+"vw"
       if (num1 == 10) {
         reset();
+        alert('A winner is you!\nPlayer Blue')
       }
       
     } else if (parseInt(ball.style.left) > 85) {
@@ -131,6 +132,7 @@ if (x <= 0 || x >= 1770) {
       ball.style.left = 50+"vw"
       if (num2 == 10) {
         reset();
+        alert('A winner is you!\nPlayer Red')
       }
     }
 
