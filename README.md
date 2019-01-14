@@ -12,7 +12,7 @@ player1 - skal kunne køre op og ned og forhindre bolden fra at ramme den bagers
 
 player2 - skal kunne køre op og ned og forhindre bolden fra at ramme den bagerste væg, player2 er placeret i højre side, du styre player1 med ArrowUp og ArrowDown.
 
-bolden - bolden er placeret i midten og når spillet startes køre den random rundt på kortet indtil den ramme en af enderne.
+bolden - bolden er placeret i midten og når spillet startes bliver bolden skudt ud i en random på kortet når den ramme en af enderne, får modsatte spiller et point.
 
 tidsplan:
 Opstart: inddele roller, lave scrum board og krav spec.
