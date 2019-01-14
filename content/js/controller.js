@@ -120,7 +120,7 @@ if (x <= 0 || x >= 1770) {
     if (parseInt(ball.style.left) < 0) {
       document.getElementById("scoreboard2").innerHTML = ++num1;
       ball.style.top = 25+"vh"
-      ball.style.left = 50+"vw"
+      ball.style.left = 40+"vw"
       if (num1 == 10) {
         reset();
         alert('A winner is you!\nPlayer Blue')
@@ -129,7 +129,7 @@ if (x <= 0 || x >= 1770) {
     } else if (parseInt(ball.style.left) > 85) {
       document.getElementById("scoreboard1").innerHTML = ++num2;
       ball.style.top = 25+"vh"
-      ball.style.left = 50+"vw"
+      ball.style.left = 40+"vw"
       if (num2 == 10) {
         reset();
         alert('A winner is you!\nPlayer Red')
