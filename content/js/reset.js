@@ -5,5 +5,5 @@ function reset() {
   num2 = 0;
   ball.style.top = 25+"vh"
   ball.style.left = 40+"vw"
-  clearInterval()
+countTime = -1;  
 };

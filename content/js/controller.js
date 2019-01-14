@@ -2,12 +2,10 @@ num1=0
 num2=0
 const p2 = document.getElementById("p2");
 const p1 = document.getElementById("p1");
-
 const ball = document.getElementById("ball");
 
 document.addEventListener('keydown', (event) => {
   const keyName = event.key;
-
   // console.log(event.key);
   // var out = document.getElementById('output');
 // var x = event.key;
@@ -48,6 +46,16 @@ if(keyName == "40" || keyName == "ArrowDown"){
   }
   // console.log(p2.style.top);
 }
+
+if (keyName == " ") {
+  countTime=0;
+
+setInterval(()=> {
+  if (countTime === 0) {
+    ballSpeed();
+  }
+  }, 30);
+  }
 });
 
 vx = Math.random() * 500 - 250;
@@ -185,9 +193,5 @@ function ballSpeed() {
 }
 
 
-setInterval(()=> {
-  // console.log("interval start");
-  ballSpeed();
-}, 30);
 
 // console.dir(Array.from(document.getElementsByClassName('game'))[0]);

@@ -34,8 +34,9 @@
 }
 
 .game {
-  border: 5px solid #000;
+  /* border: 5px solid #000; */
   width: 90%;
+  height: 52.1vh;
   margin-left: 5%;
 }
 
