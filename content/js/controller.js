@@ -1,5 +1,10 @@
 num1=0
 num2=0
+const p2 = document.getElementById("p2");
+const p1 = document.getElementById("p1");
+
+const ball = document.getElementById("ball");
+
 document.addEventListener('keydown', (event) => {
   const keyName = event.key;
 
@@ -45,13 +50,6 @@ if(keyName == "40" || keyName == "ArrowDown"){
 }
 });
 
-const p2 = document.getElementById("p2");
-const p1 = document.getElementById("p1");
-
-
-
-const ball = document.getElementById("ball");
-
 vx = Math.random() * 500 - 250;
 if (vx < 25 && vx > -25) {
   if (vx < 25 && vx > 0) {
@@ -91,14 +89,61 @@ function ballSpeed() {
   y = ball.y;
   // console.log(y);
 // console.log(x, y);
-if (x <= 0 || x >= 1770) {
-    vx = vx * -1;
-    // console.log(1);
-  }
+
 
   if (parseInt(ball.style.left) >= parseInt(p2.style.left) + 4 && parseInt(ball.style.left) <= parseInt(p2.style.left) + 10) {
-    if (parseInt(ball.style.top) <= parseInt(p2.style.top) + 8 && parseInt(ball.style.top) >= parseInt(p2.style.top) - 5) {
+    if (parseInt(ball.style.top) <= parseInt(p2.style.top) + 10 && parseInt(ball.style.top) >= parseInt(p2.style.top) - 5) {
       vx = vx * -1;
+      if (parseInt(ball.style.top) <= parseInt(p2.style.top)) {
+        if (!parseInt(ball.style.top) <= parseInt(p2.style.top) - 5) {
+          console.log("middle");
+             console.log(ydegrees);
+
+          if (ydegrees < 1 && ydegrees > -1) {
+            return;
+          }
+          else if (ydegrees > 0) {
+            ydegrees = ydegrees / -1.5;
+          } else {
+            ydegrees = ydegrees / 1.5;
+          }
+            console.log(ydegrees);
+
+        }
+        if (parseInt(ball.style.top) <= parseInt(p2.style.top) - 5) {
+          console.log("top");
+          if (ydegrees > 0) {
+            ydegrees = ydegrees * -1.5;
+          } else {
+            ydegrees = ydegrees * 1.5;
+          }
+        }
+      } else {
+        // console.log(parseInt(ball.style.top), parseInt(p2.style.top) + 8);
+        if (parseInt(ball.style.top) >= parseInt(p2.style.top) + 5){
+          if (parseInt(ball.style.top) <= parseInt(p2.style.top) + 8) {
+            console.log("middle2");
+            console.log(ydegrees);
+            if (ydegrees < 1 && ydegrees > -1) {
+              return;
+            }
+            else if (ydegrees > 0) {
+              ydegrees = ydegrees / -1.5;
+            } else {
+              ydegrees = ydegrees / 1.5;
+            }
+            console.log(ydegrees);
+          }
+          if (parseInt(ball.style.top) >= parseInt(p2.style.top) + 8) {
+            console.log("bottom");
+            if (ydegrees > 0) {
+              ydegrees = ydegrees * 1.5;
+            } else {
+              ydegrees = ydegrees * -1.5;
+            }
+          }
+        }
+      }
     }
   }
   if (parseInt(ball.style.left) >= parseInt(p1.style.left) + 6 && parseInt(ball.style.left) <= parseInt(p1.style.left) + 7) {
@@ -109,12 +154,13 @@ if (x <= 0 || x >= 1770) {
   if (parseInt(ball.style.top) <= 0 && ydegrees < 0 || parseInt(ball.style.top) >= 50 && ydegrees > 0) {
     ydegrees = ydegrees * -1;
   }
+
   if (vx > 0) {
     ball.style.left = parseInt(ball.style.left) + 1 + "vw";
   } else {
     ball.style.left = parseInt(ball.style.left) - 1 + "vw";
   }
-    ball.style.top = parseInt(ball.style.top) + ydegrees + "vh";
+    ball.style.top = parseInt(ball.style.top) + 0 + "vh";
 
 
     if (parseInt(ball.style.left) < 0) {
@@ -125,7 +171,7 @@ if (x <= 0 || x >= 1770) {
         reset();
         alert('A winner is you!\nPlayer Blue')
       }
-      
+
     } else if (parseInt(ball.style.left) > 85) {
       document.getElementById("scoreboard1").innerHTML = ++num2;
       ball.style.top = 25+"vh"
