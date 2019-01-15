@@ -146,7 +146,7 @@ if (ydegrees < 1 && ydegrees > -1) {
         if (parseInt(ball.style.top) >= parseInt(p2.style.top) + 5){
           if (parseInt(ball.style.top) <= parseInt(p2.style.top) + 8) {
 
-            else if (ydegrees > 0) {
+            if (ydegrees > 0) {
               ydegrees = ydegrees / -1.5;
             } else {
               ydegrees = ydegrees / 1.5;
