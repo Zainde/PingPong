@@ -4,15 +4,9 @@ num2=0
 startcount=0
 startTopBall=44.8
 startLeftBall=49.96
-<<<<<<< HEAD
-gameTop=18
+gameTop=23
 batCornerTop=12
 batCornerBottom=5
-=======
-gameTop=23
-batCornerTop=0
-batCornerBottom=0
->>>>>>> ee9c879bab4d2b01f03f41f8d437957e352d9e73
 batMiddleTop=5
 batMiddleBottom=0
 const p2 = document.getElementById("p2");
