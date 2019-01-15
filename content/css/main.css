@@ -35,13 +35,17 @@
 
 .game {
   /* border: 5px solid #000; */
-  width: 90vw;
+  /* width: 90vw;
   height: 50.1vh;
-  margin-left: 5%;
+  margin-left: 5%; */
+  /* background-image: url(/content/image/back1.svg);
+  background-repeat: no-repeat; */
 }
 
 .Instruktion {
   text-align: center;
 }
+
+
 
 /*# sourceMappingURL=main.css.map */
