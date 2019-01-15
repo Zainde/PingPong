@@ -213,7 +213,7 @@ if (ydegrees < 1 && ydegrees > -1) {
           if (ydegrees > 0) {
             ydegrees = ydegrees * -1.5;
           } else {
-            
+
             ydegrees = ydegrees * 1.5;
           }
         }
