@@ -47,16 +47,15 @@ if(keyName == "40" || keyName == "ArrowDown"){
   // console.log(p2.style.top);
 }
 
-if (keyName == " ") {
-  countTime=0;
-
-setInterval(()=> {
-  if (countTime === 0) {
-    ballSpeed();
-  }
-  }, 30);
-  }
 });
+function ballstart() {
+countTime=0
+  setInterval(()=> {
+    if (countTime === 0) {
+      ballSpeed();
+    }
+  }, 30);
+};
 
 vx = Math.random() * 500 - 250;
 if (vx < 25 && vx > -25) {
