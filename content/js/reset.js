@@ -4,7 +4,7 @@ function reset() {
   document.getElementById("scoreboard2").innerHTML = "0";
   num1 = 0;
   num2 = 0;
-  ball.style.top = 25+"vh"
-  ball.style.left = 50+"vw"
+  ball.style.top = 46.3+"vh"
+  ball.style.left = 50.1+"vw"
 countTime = -1;
 };
