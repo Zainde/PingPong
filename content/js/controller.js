@@ -97,28 +97,44 @@ function ballSpeed() {
   // console.log(y);
 // console.log(x, y);
 
+if (ydegrees < 1 && ydegrees > -1) {
+  if (ydegrees < 1 && ydegrees > 0.75 || ydegrees > -1 && ydegrees < -0.75) {
+      console.log("normal speed");
+      ball.style.top = parseInt(ball.style.top) + 1 + "vh";
+  } if (ydegrees < 0.75 && ydegrees > 0.50 || ydegrees > -0.75 && ydegrees < -0.50) {
+      console.log("2 times slower");
+      startcount++
+      if (startcount % 2 === 0) {
+        ball.style.top = parseInt(ball.style.top) + 1 + "vh";
+      }
+  } if (ydegrees < 0.50 && ydegrees > 0.25 || ydegrees > -0.50 && ydegrees < -0.25) {
+      console.log("3 times slower");
+      startcount++
+      if (startcount % 3 === 0) {
+        ball.style.top = parseInt(ball.style.top) + 1 + "vh";
+      }
+    } if (ydegrees < 0.25 && ydegrees > -0.25) {
+      console.log("straight");
+      ball.style.top = parseInt(ball.style.top) + 0 + "vh";
+    }
+}
 
   if (parseInt(ball.style.left) >= parseInt(p2.style.left) + 4 && parseInt(ball.style.left) <= parseInt(p2.style.left) + 10) {
     if (parseInt(ball.style.top) <= parseInt(p2.style.top) + 10 && parseInt(ball.style.top) >= parseInt(p2.style.top) - 5) {
       vx = vx * -1;
       if (parseInt(ball.style.top) <= parseInt(p2.style.top)) {
         if (!parseInt(ball.style.top) <= parseInt(p2.style.top) - 5) {
-          console.log("middle");
-             console.log(ydegrees);
 
-          if (ydegrees < 1 && ydegrees > -1) {
-            return;
-          }
-          else if (ydegrees > 0) {
-            ydegrees = ydegrees / -1.5;
-          } else {
-            ydegrees = ydegrees / 1.5;
-          }
-            console.log(ydegrees);
+             if (ydegrees > 0) {
+               ydegrees = ydegrees / -1.5;
+             } else {
+               ydegrees = ydegrees / 1.5;
+             }
+
 
         }
         if (parseInt(ball.style.top) <= parseInt(p2.style.top) - 5) {
-          console.log("top");
+
           if (ydegrees > 0) {
             ydegrees = ydegrees * -1.5;
           } else {
@@ -129,20 +145,14 @@ function ballSpeed() {
         // console.log(parseInt(ball.style.top), parseInt(p2.style.top) + 8);
         if (parseInt(ball.style.top) >= parseInt(p2.style.top) + 5){
           if (parseInt(ball.style.top) <= parseInt(p2.style.top) + 8) {
-            console.log("middle2");
-            console.log(ydegrees);
-            if (ydegrees < 1 && ydegrees > -1) {
-              return;
-            }
+
             else if (ydegrees > 0) {
               ydegrees = ydegrees / -1.5;
             } else {
               ydegrees = ydegrees / 1.5;
             }
-            console.log(ydegrees);
           }
           if (parseInt(ball.style.top) >= parseInt(p2.style.top) + 8) {
-            console.log("bottom");
             if (ydegrees > 0) {
               ydegrees = ydegrees * 1.5;
             } else {
@@ -167,8 +177,11 @@ function ballSpeed() {
   } else {
     ball.style.left = parseInt(ball.style.left) - 1 + "vw";
   }
+  if (ydegrees < 0.25 && ydegrees > -0.25) {
     ball.style.top = parseInt(ball.style.top) + 0 + "vh";
-
+  } else {
+    ball.style.top = parseInt(ball.style.top) + ydegrees + "vh";
+  }
 
     if (parseInt(ball.style.left) < 0) {
       document.getElementById("scoreboard2").innerHTML = ++num1;
