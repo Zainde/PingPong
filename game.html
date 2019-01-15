@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="content/css/main.css">
+  <link rel="stylesheet" href="content/css/bootstrap.css">
+
   <title>Pong game</title>
 </head>
 <body>
@@ -17,16 +19,24 @@
 </div>
   <button class="reset" onclick="reset()">Reset</button>
   <!-- <div class="game" style="background-image:url(content/image/back2.svg); background-repeat: repeat; background-size:28px 28px"> -->
-  <div class="game" style="background-image:url(content/image/back1.svg);background-repeat:no-repeat;">
-
+  <div class="game"/>
     <img id="p2" src="content/image/bluefull.svg" style="position:absolute;left:85vw;top:43vh;width:15vw;height:20vh;" />
     <img id="p1" src="content/image/redfull.svg" style="position:absolute;left:0vw;top:43vh;width:15vw;height:20vh;" />
+<<<<<<< HEAD
+    <img id="ball" onclick="ballstart()" src="content/image/bold.svg" style="position:absolute;left:50.1vw;top:46.3vh;width:4.5vh;height:4.5vh;  z-index: 9000;" />
+=======
 
     <img id="ball" onclick="ballstart()" src="content/image/bold.svg" style="position:absolute;left:49.96vw;top:44.8vh;width:4.5vh;height:4.5vh;" />
 
+>>>>>>> 8f1145863bf89213f93eb0d001b0d7fbfc0d118d
   </div>
 </div>
-
+<div class="container">
+  <div class="row">
+    <div class="col test">
+      <img src="content/image/back1.svg" alt="">
+    </div>
+  </div>
   <script src="content/js/reset.js"></script>
   <script src="content/js/controller.js"></script>
 
