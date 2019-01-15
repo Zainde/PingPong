@@ -2,9 +2,9 @@
 num1=0
 num2=0
 startcount=0
-startTopBall=44.8
-startLeftBall=49.96
-gameTop=23
+startTopBall=50.4
+startLeftBall=49.48
+gameTop=28
 batCornerTop=12
 batCornerBottom=5
 batMiddleTop=5
@@ -26,7 +26,7 @@ if(keyName == "W" || keyName == "w"){
 }
 
 if(keyName == "S" || keyName == "s"){
-  if (parseInt(p1.style.top) >= 55) {
+  if (parseInt(p1.style.top) >= 63) {
     return;
   } else {
     p1.style.top = parseInt(p1.style.top) + 5 + "vh";
@@ -42,7 +42,7 @@ if(keyName == "38" || keyName == "ArrowUp"){
 }
 
 if(keyName == "40" || keyName == "ArrowDown"){
-  if (parseInt(p2.style.top) >= 55) {
+  if (parseInt(p2.style.top) >= 63) {
     return;
   } else{
   p2.style.top = parseInt(p2.style.top) + 5 + "vh";
@@ -58,7 +58,7 @@ countTime=0
     if (countTime === 0) {
       ballSpeed();
     }
-  }, 30);
+  }, 40);
 };
 // some math to calculate the ball movement along the x axis
 vx = Math.random() * 500 - 250;
@@ -240,7 +240,7 @@ if (ydegrees < 1 && ydegrees > -1) {
     }
   }
 // makes the ball confined to the game, so it can't go over or under the sides
-  if (parseInt(ball.style.top) <= gameTop && ydegrees < 0 || parseInt(ball.style.top) >= 64 && ydegrees > 0) {
+  if (parseInt(ball.style.top) <= gameTop && ydegrees < 0 || parseInt(ball.style.top) >= 74 && ydegrees > 0) {
     ydegrees = ydegrees * -1;
   }
 // makes the ball move continuously in the given direction
