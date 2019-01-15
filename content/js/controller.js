@@ -11,7 +11,7 @@ document.addEventListener('keydown', (event) => {
   const keyName = event.key;
 
 if(keyName == "W" || keyName == "w"){
-  if (parseInt(p1.style.top) <= 0) {
+  if (parseInt(p1.style.top) <= 25) {
     return;
   } else {
     p1.style.top = parseInt(p1.style.top) - 5 + "vh";
@@ -19,7 +19,7 @@ if(keyName == "W" || keyName == "w"){
 }
 
 if(keyName == "S" || keyName == "s"){
-  if (parseInt(p1.style.top) >= 45) {
+  if (parseInt(p1.style.top) >= 60) {
     return;
   } else {
     p1.style.top = parseInt(p1.style.top) + 5 + "vh";
@@ -27,7 +27,7 @@ if(keyName == "S" || keyName == "s"){
 }
 
 if(keyName == "38" || keyName == "ArrowUp"){
-  if (parseInt(p2.style.top) <= 0) {
+  if (parseInt(p2.style.top) <= 25) {
     return;
   } else {
     p2.style.top = parseInt(p2.style.top) - 5 + "vh";
@@ -35,7 +35,7 @@ if(keyName == "38" || keyName == "ArrowUp"){
 }
 
 if(keyName == "40" || keyName == "ArrowDown"){
-  if (parseInt(p2.style.top) >= 45) {
+  if (parseInt(p2.style.top) >= 60) {
     return;
   } else{
   p2.style.top = parseInt(p2.style.top) + 5 + "vh";
@@ -174,7 +174,7 @@ if (ydegrees < 1 && ydegrees > -1) {
     }
   }
 // makes the ball confined to the game, so it can't go over or under the sides
-  if (parseInt(ball.style.top) <= 0 && ydegrees < 0 || parseInt(ball.style.top) >= 50 && ydegrees > 0) {
+  if (parseInt(ball.style.top) <= 23 && ydegrees < 0 || parseInt(ball.style.top) >= 70 && ydegrees > 0) {
     ydegrees = ydegrees * -1;
   }
 // makes the ball move continuously in the given direction
@@ -191,7 +191,7 @@ if (ydegrees < 1 && ydegrees > -1) {
     ball.style.top = parseInt(ball.style.top) + ydegrees + "vh";
   }
 // scoreboard code, makes the ball reset after it hits either end of the game behind the players and gives the opponent player a point
-    if (parseInt(ball.style.left) < 0) {
+    if (parseInt(ball.style.left) < 5) {
       document.getElementById("scoreboard2").innerHTML = ++num1;
       ball.style.top = 25+"vh"
       ball.style.left = 50+"vw"
@@ -201,7 +201,7 @@ if (ydegrees < 1 && ydegrees > -1) {
         alert('A winner is you!\nPlayer Blue')
       }
 
-    } else if (parseInt(ball.style.left) > 85) {
+    } else if (parseInt(ball.style.left) > 95) {
       document.getElementById("scoreboard1").innerHTML = ++num2;
       ball.style.top = 25+"vh"
       ball.style.left = 50+"vw"
