@@ -67,34 +67,38 @@ document.addEventListener('keydown', (event) => {
 // console.log(map);
 
 if(keyName == "W" || keyName == "w"){
-  if (parseInt(p1.style.top) <= gameTop) {
+  if (parseFloat(p1.style.top) <= gameTop) {
     return;
   } else {
-    p1.style.top = parseInt(p1.style.top) - percentageHeight / gameHeight * 150 + "vh";
+    p1.style.top = parseFloat(p1.style.top) - (percentageHeight / gameHeight * 150) + "vh";
   }
+  console.log(p1.style.top);
+  console.log((percentageHeight / gameHeight * 150));
 }
 
 if(keyName == "S" || keyName == "s"){
-  if (parseInt(p1.style.top) >= gameBottom + 2) {
+  if (parseFloat(p1.style.top) >= gameBottom) {
     return;
   } else {
-    p1.style.top = parseInt(p1.style.top) + percentageHeight / gameHeight * 150 + "vh";
+    p1.style.top = parseFloat(p1.style.top) + (percentageHeight / gameHeight * 150) + "vh";
   }
+  console.log(p1.style.top);
+  console.log((percentageHeight / gameHeight * 150));
 }
 
 if(keyName == "38" || keyName == "ArrowUp"){
-  if (parseInt(p2.style.top) <= gameTop) {
+  if (parseFloat(p2.style.top) <= gameTop) {
     return;
   } else {
-    p2.style.top = parseInt(p2.style.top) - percentageHeight / gameHeight * 150 + "vh";
+    p2.style.top = parseFloat(p2.style.top) - (percentageHeight / gameHeight * 150) + "vh";
   }
 }
 
 if(keyName == "40" || keyName == "ArrowDown"){
-  if (parseInt(p2.style.top) >= gameBottom + 2) {
+  if (parseFloat(p2.style.top) >= gameBottom) {
     return;
   } else{
-  p2.style.top = parseInt(p2.style.top) + percentageHeight / gameHeight * 150 + "vh";
+  p2.style.top = parseFloat(p2.style.top) + (percentageHeight / gameHeight * 150) + "vh";
   }
 }
 
@@ -152,43 +156,43 @@ function ballSpeed() {
   x = ball.x;
   y = ball.y;
 // making sure the ball doesn't get stuck between the ydegrees values of 1 and -1, will make the ball "shake" but it will still move
-// if (ydegrees < 1 && ydegrees > -1) {
-//   if (ydegrees > 0) {
-//   if (ydegrees < 1 && ydegrees > 0.75) {
-//       ball.style.top = parseInt(ball.style.top) + 1 + "vh";
-//   } if (ydegrees < 0.75 && ydegrees > 0.50) {
-//       startcount++
-//       if (startcount % 2 === 0) {
-//         ball.style.top = parseInt(ball.style.top) + 1 + "vh";
-//       }
-//   } if (ydegrees < 0.50 && ydegrees > 0.0) {
-//       startcount++
-//       if (startcount % 3 === 0) {
-//         ball.style.top = parseInt(ball.style.top) + 1 + "vh";
-//       }
-//     }
-//      // if (ydegrees < 0.25 && ydegrees > -0.25) {
-//     //   ball.style.top = parseInt(ball.style.top) + 0 + "vh";
-//     // }
-//   } else {
-//     if (ydegrees > -1 && ydegrees < -0.75) {
-//         ball.style.top = parseInt(ball.style.top) - 1 + "vh";
-//     } if (ydegrees > -0.75 && ydegrees < -0.50) {
-//         startcount++
-//         if (startcount % 2 === 0) {
-//           ball.style.top = parseInt(ball.style.top) - 1 + "vh";
-//         }
-//     } if (ydegrees > -0.50 && ydegrees < -0.0) {
-//         startcount++
-//         if (startcount % 3 === 0) {
-//           ball.style.top = parseInt(ball.style.top) - 1 + "vh";
-//         }
-//       }
-//        // if (ydegrees < 0.25 && ydegrees > -0.25) {
-//       //   ball.style.top = parseInt(ball.style.top) - 0 + "vh";
-//       // }
-//   }
-// }
+if (ydegrees < 1 && ydegrees > -1) {
+  if (ydegrees > 0) {
+  if (ydegrees < 1 && ydegrees > 0.75) {
+      ball.style.top = parseInt(ball.style.top) + 1 + "vh";
+  } if (ydegrees < 0.75 && ydegrees > 0.50) {
+      startcount++
+      if (startcount % 2 === 0) {
+        ball.style.top = parseInt(ball.style.top) + 1 + "vh";
+      }
+  } if (ydegrees < 0.50 && ydegrees > 0.0) {
+      startcount++
+      if (startcount % 3 === 0) {
+        ball.style.top = parseInt(ball.style.top) + 1 + "vh";
+      }
+    }
+     // if (ydegrees < 0.25 && ydegrees > -0.25) {
+    //   ball.style.top = parseInt(ball.style.top) + 0 + "vh";
+    // }
+  } else {
+    if (ydegrees > -1 && ydegrees < -0.75) {
+        ball.style.top = parseInt(ball.style.top) - 1 + "vh";
+    } if (ydegrees > -0.75 && ydegrees < -0.50) {
+        startcount++
+        if (startcount % 2 === 0) {
+          ball.style.top = parseInt(ball.style.top) - 1 + "vh";
+        }
+    } if (ydegrees > -0.50 && ydegrees < -0.0) {
+        startcount++
+        if (startcount % 3 === 0) {
+          ball.style.top = parseInt(ball.style.top) - 1 + "vh";
+        }
+      }
+       // if (ydegrees < 0.25 && ydegrees > -0.25) {
+      //   ball.style.top = parseInt(ball.style.top) - 0 + "vh";
+      // }
+  }
+}
 // making sure the balls moves as it should when it hits the p2 controller on different positions
   if (parseInt(ball.style.left) >= parseInt(p2.style.left) && parseInt(ball.style.left) <= parseInt(p2.style.left)) {
     if (parseInt(ball.style.top) <= parseInt(p2.style.top) + batCornerTop && parseInt(ball.style.top) >= parseInt(p2.style.top) - batCornerBottom) {
@@ -305,7 +309,7 @@ function ballSpeed() {
   // if (ydegrees < 0.25 && ydegrees > -0.25) {
   //   ball.style.top = parseInt(ball.style.top) + 0 + "vh";
   // } else {
-    ball.style.top = parseInt(ball.style.top) + 0 + "vh";
+    ball.style.top = parseInt(ball.style.top) + ydegrees + "vh";
   // }
 // scoreboard code, makes the ball reset after it hits either end of the game behind the players and gives the opponent player a point
     if (parseInt(ball.style.left) < 0) {
