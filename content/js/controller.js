@@ -35,10 +35,10 @@ num1=0
 num2=0
 startcount=0
 
-startLeftBall=gameWidth/percentageWidth/2
+startLeftBall=gameWidth/percentageWidth/1.995
 gameTop=(ptTotalHeight + rbTotalHeight) / percentageHeight
 gameBottom = gameHeight / percentageHeight
-startTopBall=gameTop + gameBottom / 2
+startTopBall=gameTop + gameBottom / 2.15
 batCornerTop=12
 batCornerBottom=5
 batMiddleTop=5
@@ -48,40 +48,57 @@ ball.style.top = startTopBall+"vh"
 ball.style.left = startLeftBall+"vw"
 p2.style.top = startTopBall + "vh"
 p1.style.top = startTopBall + "vh"
-
+// var map = {}; // You could also use an array
+// onkeydown = onkeyup = function(e){
+//     e = e || event; // to deal with IE
+//     map[e.keyCode] = e.type == 'keydown';
+//     /* insert conditional here */
+// }
 // making an add event listener so we can use the keyboard for movement
+// document.addEventListener('keyup', (event) => {
+//   const keyName = event.key;
+//   map[keyName] = event.type == "keydown";
+// console.log(map);
+// });
+
 document.addEventListener('keydown', (event) => {
   const keyName = event.key;
+// map[keyName] = event.type == "keydown";
+// console.log(map);
 
 if(keyName == "W" || keyName == "w"){
-  if (parseInt(p1.style.top) <= gameTop) {
+  if (parseFloat(p1.style.top) <= gameTop) {
     return;
   } else {
-    p1.style.top = parseInt(p1.style.top) - percentageHeight / 2 + "vh";
+    p1.style.top = parseFloat(p1.style.top) - (percentageHeight / gameHeight * 150) + "vh";
   }
+  console.log(p1.style.top);
+  console.log((percentageHeight / gameHeight * 150));
 }
 
 if(keyName == "S" || keyName == "s"){
-  if (parseInt(p1.style.top) >= gameBottom) {
+  if (parseFloat(p1.style.top) >= gameBottom +2) {
     return;
   } else {
-    p1.style.top = parseInt(p1.style.top) + percentageHeight / 2 + "vh";
+    p1.style.top = parseFloat(p1.style.top) + (percentageHeight / gameHeight * 150) + "vh";
   }
+  console.log(p1.style.top);
+  console.log((percentageHeight / gameHeight * 150));
 }
 
 if(keyName == "38" || keyName == "ArrowUp"){
-  if (parseInt(p2.style.top) <= gameTop) {
+  if (parseFloat(p2.style.top) <= gameTop) {
     return;
   } else {
-    p2.style.top = parseInt(p2.style.top) - percentageHeight / 2 + "vh";
+    p2.style.top = parseFloat(p2.style.top) - (percentageHeight / gameHeight * 150) + "vh";
   }
 }
 
 if(keyName == "40" || keyName == "ArrowDown"){
-  if (parseInt(p2.style.top) >= gameBottom) {
+  if (parseFloat(p2.style.top) >= gameBottom +2) {
     return;
   } else{
-  p2.style.top = parseInt(p2.style.top) + percentageHeight / 2 + "vh";
+  p2.style.top = parseFloat(p2.style.top) + (percentageHeight / gameHeight * 150) + "vh";
   }
 }
 
@@ -148,14 +165,15 @@ if (ydegrees < 1 && ydegrees > -1) {
       if (startcount % 2 === 0) {
         ball.style.top = parseInt(ball.style.top) + 1 + "vh";
       }
-  } if (ydegrees < 0.50 && ydegrees > 0.25) {
+  } if (ydegrees < 0.50 && ydegrees > 0.0) {
       startcount++
       if (startcount % 3 === 0) {
         ball.style.top = parseInt(ball.style.top) + 1 + "vh";
       }
-    } if (ydegrees < 0.25 && ydegrees > -0.25) {
-      ball.style.top = parseInt(ball.style.top) + 0 + "vh";
     }
+     // if (ydegrees < 0.25 && ydegrees > -0.25) {
+    //   ball.style.top = parseInt(ball.style.top) + 0 + "vh";
+    // }
   } else {
     if (ydegrees > -1 && ydegrees < -0.75) {
         ball.style.top = parseInt(ball.style.top) - 1 + "vh";
@@ -164,14 +182,15 @@ if (ydegrees < 1 && ydegrees > -1) {
         if (startcount % 2 === 0) {
           ball.style.top = parseInt(ball.style.top) - 1 + "vh";
         }
-    } if (ydegrees > -0.50 && ydegrees < -0.25) {
+    } if (ydegrees > -0.50 && ydegrees < -0.0) {
         startcount++
         if (startcount % 3 === 0) {
           ball.style.top = parseInt(ball.style.top) - 1 + "vh";
         }
-      } if (ydegrees < 0.25 && ydegrees > -0.25) {
-        ball.style.top = parseInt(ball.style.top) - 0 + "vh";
       }
+       // if (ydegrees < 0.25 && ydegrees > -0.25) {
+      //   ball.style.top = parseInt(ball.style.top) - 0 + "vh";
+      // }
   }
 }
 // making sure the balls moves as it should when it hits the p2 controller on different positions
@@ -287,11 +306,11 @@ if (ydegrees < 1 && ydegrees > -1) {
     ball.style.left = parseInt(ball.style.left) - 1 + "vw";
   }
 // this if/else makes it move along the y axis, first is a fix for it to not bug out between the ydegrees numbers of 0.25 and -0.25
-  if (ydegrees < 0.25 && ydegrees > -0.25) {
-    ball.style.top = parseInt(ball.style.top) + 0 + "vh";
-  } else {
+  // if (ydegrees < 0.25 && ydegrees > -0.25) {
+  //   ball.style.top = parseInt(ball.style.top) + 0 + "vh";
+  // } else {
     ball.style.top = parseInt(ball.style.top) + ydegrees + "vh";
-  }
+  // }
 // scoreboard code, makes the ball reset after it hits either end of the game behind the players and gives the opponent player a point
     if (parseInt(ball.style.left) < 0) {
       document.getElementById("scoreboard2").innerHTML = ++num1;
