@@ -77,7 +77,7 @@ if(keyName == "W" || keyName == "w"){
 }
 
 if(keyName == "S" || keyName == "s"){
-  if (parseFloat(p1.style.top) >= gameBottom) {
+  if (parseFloat(p1.style.top) >= gameBottom +2) {
     return;
   } else {
     p1.style.top = parseFloat(p1.style.top) + (percentageHeight / gameHeight * 150) + "vh";
@@ -95,7 +95,7 @@ if(keyName == "38" || keyName == "ArrowUp"){
 }
 
 if(keyName == "40" || keyName == "ArrowDown"){
-  if (parseFloat(p2.style.top) >= gameBottom) {
+  if (parseFloat(p2.style.top) >= gameBottom +2) {
     return;
   } else{
   p2.style.top = parseFloat(p2.style.top) + (percentageHeight / gameHeight * 150) + "vh";
