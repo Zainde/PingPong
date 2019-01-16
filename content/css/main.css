@@ -43,9 +43,12 @@
   font-size: 2em;
   margin-left: 20px;
   z-index: 99999;
-  margin-left: 46%;
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin-top:5px;
+  margin-bottom:5px;
+  display: block!important;
+  margin-left: auto!important;
+  margin-right: auto!important;
+
 }
 
 .game {
@@ -60,7 +63,10 @@
 .Instruktion {
   text-align: center;
 }
-
+body{
+  background-image:url("/content/image/background1.png");
+  background-repeat:repeat;
+}
 
 
 /*# sourceMappingURL=main.css.map */
