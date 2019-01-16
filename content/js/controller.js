@@ -161,14 +161,15 @@ if (ydegrees < 1 && ydegrees > -1) {
       if (startcount % 2 === 0) {
         ball.style.top = parseInt(ball.style.top) + 1 + "vh";
       }
-  } if (ydegrees < 0.50 && ydegrees > 0.25) {
+  } if (ydegrees < 0.50 && ydegrees > 0.0) {
       startcount++
       if (startcount % 3 === 0) {
         ball.style.top = parseInt(ball.style.top) + 1 + "vh";
       }
-    } if (ydegrees < 0.25 && ydegrees > -0.25) {
-      ball.style.top = parseInt(ball.style.top) + 0 + "vh";
     }
+     // if (ydegrees < 0.25 && ydegrees > -0.25) {
+    //   ball.style.top = parseInt(ball.style.top) + 0 + "vh";
+    // }
   } else {
     if (ydegrees > -1 && ydegrees < -0.75) {
         ball.style.top = parseInt(ball.style.top) - 1 + "vh";
@@ -177,14 +178,15 @@ if (ydegrees < 1 && ydegrees > -1) {
         if (startcount % 2 === 0) {
           ball.style.top = parseInt(ball.style.top) - 1 + "vh";
         }
-    } if (ydegrees > -0.50 && ydegrees < -0.25) {
+    } if (ydegrees > -0.50 && ydegrees < -0.0) {
         startcount++
         if (startcount % 3 === 0) {
           ball.style.top = parseInt(ball.style.top) - 1 + "vh";
         }
-      } if (ydegrees < 0.25 && ydegrees > -0.25) {
-        ball.style.top = parseInt(ball.style.top) - 0 + "vh";
       }
+       // if (ydegrees < 0.25 && ydegrees > -0.25) {
+      //   ball.style.top = parseInt(ball.style.top) - 0 + "vh";
+      // }
   }
 }
 // making sure the balls moves as it should when it hits the p2 controller on different positions
@@ -300,11 +302,11 @@ if (ydegrees < 1 && ydegrees > -1) {
     ball.style.left = parseInt(ball.style.left) - 1 + "vw";
   }
 // this if/else makes it move along the y axis, first is a fix for it to not bug out between the ydegrees numbers of 0.25 and -0.25
-  if (ydegrees < 0.25 && ydegrees > -0.25) {
-    ball.style.top = parseInt(ball.style.top) + 0 + "vh";
-  } else {
+  // if (ydegrees < 0.25 && ydegrees > -0.25) {
+  //   ball.style.top = parseInt(ball.style.top) + 0 + "vh";
+  // } else {
     ball.style.top = parseInt(ball.style.top) + ydegrees + "vh";
-  }
+  // }
 // scoreboard code, makes the ball reset after it hits either end of the game behind the players and gives the opponent player a point
     if (parseInt(ball.style.left) < 0) {
       document.getElementById("scoreboard2").innerHTML = ++num1;
