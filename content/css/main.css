@@ -64,7 +64,7 @@
   text-align: center;
 }
 body{
-  background-image:url("/content/image/background1.png");
+  background-image:url("../image/background1.png");
   background-repeat:repeat;
 }
 
