@@ -67,6 +67,13 @@ body{
   background-image:url("../image/background1.png");
   background-repeat:repeat;
 }
+.sizeForm1, .sizeForm2{
+  width:40vh!important;
+  display: block!important;
+  margin-left: auto!important;
+  margin-right: auto!important;
+  background-image:url("../image/background1.png")!important;
+}
 
 
 /*# sourceMappingURL=main.css.map */
