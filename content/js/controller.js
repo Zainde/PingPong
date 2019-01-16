@@ -13,9 +13,9 @@ num1=0
 num2=0
 startcount=0
 
-startTopBall=percentageHeight * 4.23
+startTopBall=percentageHeight * 3.92
 startLeftBall=percentageWidth * 2.58
-gameTop=percentageHeight * 1.8
+gameTop=percentageHeight * 1.3
 gameBottom = percentageHeight * 5.5
 batCornerTop=12
 batCornerBottom=5
@@ -27,6 +27,8 @@ const p1 = document.getElementById("p1");
 const ball = document.getElementById("ball");
 ball.style.top = startTopBall+"vh"
 ball.style.left = startLeftBall+"vw"
+p2.style.top = startTopBall + "vh"
+p1.style.top = startTopBall + "vh"
 
 // making an add event listener so we can use the keyboard for movement
 document.addEventListener('keydown', (event) => {
