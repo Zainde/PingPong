@@ -1,17 +1,32 @@
 // making variables for the scoreboard numbers, a counter and constants for player 1, 2 and the ball
+
+windowHeight = window.innerHeight;
+
+windowWidth = window.innerWidth;
+
+percentageHeight = windowHeight / 100;
+
+percentageWidth = windowWidth / 100;
+
+
 num1=0
 num2=0
 startcount=0
-startTopBall=50.4
-startLeftBall=49.48
-gameTop=28
+
+startTopBall=percentageHeight * 4.23
+startLeftBall=percentageWidth * 2.58
+gameTop=percentageHeight * 1.8
+gameBottom = percentageHeight * 5.5
 batCornerTop=12
 batCornerBottom=5
 batMiddleTop=5
 batMiddleBottom=0
+
 const p2 = document.getElementById("p2");
 const p1 = document.getElementById("p1");
 const ball = document.getElementById("ball");
+ball.style.top = startTopBall+"vh"
+ball.style.left = startLeftBall+"vw"
 
 // making an add event listener so we can use the keyboard for movement
 document.addEventListener('keydown', (event) => {
@@ -21,15 +36,15 @@ if(keyName == "W" || keyName == "w"){
   if (parseInt(p1.style.top) <= gameTop) {
     return;
   } else {
-    p1.style.top = parseInt(p1.style.top) - 5 + "vh";
+    p1.style.top = parseInt(p1.style.top) - percentageHeight / 2 + "vh";
   }
 }
 
 if(keyName == "S" || keyName == "s"){
-  if (parseInt(p1.style.top) >= 63) {
+  if (parseInt(p1.style.top) >= gameBottom) {
     return;
   } else {
-    p1.style.top = parseInt(p1.style.top) + 5 + "vh";
+    p1.style.top = parseInt(p1.style.top) + percentageHeight / 2 + "vh";
   }
 }
 
@@ -37,15 +52,15 @@ if(keyName == "38" || keyName == "ArrowUp"){
   if (parseInt(p2.style.top) <= gameTop) {
     return;
   } else {
-    p2.style.top = parseInt(p2.style.top) - 5 + "vh";
+    p2.style.top = parseInt(p2.style.top) - percentageHeight / 2 + "vh";
   }
 }
 
 if(keyName == "40" || keyName == "ArrowDown"){
-  if (parseInt(p2.style.top) >= 63) {
+  if (parseInt(p2.style.top) >= gameBottom) {
     return;
   } else{
-  p2.style.top = parseInt(p2.style.top) + 5 + "vh";
+  p2.style.top = parseInt(p2.style.top) + percentageHeight / 2 + "vh";
   }
 }
 
@@ -138,9 +153,8 @@ if (ydegrees < 1 && ydegrees > -1) {
       }
   }
 }
-
 // making sure the balls moves as it should when it hits the p2 controller on different positions
-  if (parseInt(ball.style.left) >= parseInt(p2.style.left) + 5 && parseInt(ball.style.left) <= parseInt(p2.style.left) + 5) {
+  if (parseInt(ball.style.left) >= parseInt(p2.style.left) && parseInt(ball.style.left) <= parseInt(p2.style.left)) {
     if (parseInt(ball.style.top) <= parseInt(p2.style.top) + batCornerTop && parseInt(ball.style.top) >= parseInt(p2.style.top) - batCornerBottom) {
 
       // makes sure the ball changes directions along the x axis when it "hits" the controller
@@ -190,7 +204,7 @@ if (ydegrees < 1 && ydegrees > -1) {
     }
   }
   // making sure the balls moves as it should when it hits the p1 controller on different positions
-  if (parseInt(ball.style.left) >= parseInt(p1.style.left) + 7 && parseInt(ball.style.left) <= parseInt(p1.style.left) + 7) {
+  if (parseInt(ball.style.left) >= parseInt(p1.style.left) && parseInt(ball.style.left) <= parseInt(p1.style.left)) {
     if (parseInt(ball.style.top) <= parseInt(p1.style.top) + batCornerTop && parseInt(ball.style.top) >= parseInt(p1.style.top) - batCornerBottom) {
 
       // makes sure the ball changes directions along the x axis when it "hits" the controller
@@ -241,7 +255,7 @@ if (ydegrees < 1 && ydegrees > -1) {
     }
   }
 // makes the ball confined to the game, so it can't go over or under the sides
-  if (parseInt(ball.style.top) <= gameTop && ydegrees < 0 || parseInt(ball.style.top) >= 74 && ydegrees > 0) {
+  if (parseInt(ball.style.top) <= gameTop && ydegrees < 0 || parseInt(ball.style.top) >= gameBottom * 1.2 && ydegrees > 0) {
     ydegrees = ydegrees * -1;
   }
 // makes the ball move continuously in the given direction
@@ -258,7 +272,7 @@ if (ydegrees < 1 && ydegrees > -1) {
     ball.style.top = parseInt(ball.style.top) + ydegrees + "vh";
   }
 // scoreboard code, makes the ball reset after it hits either end of the game behind the players and gives the opponent player a point
-    if (parseInt(ball.style.left) < 5) {
+    if (parseInt(ball.style.left) < 0) {
       document.getElementById("scoreboard2").innerHTML = ++num1;
       ball.style.top = startTopBall+"vh"
       ball.style.left = startLeftBall+"vw"
@@ -268,7 +282,7 @@ if (ydegrees < 1 && ydegrees > -1) {
         alert('A winner is you!\nPlayer Blue')
       }
 
-    } else if (parseInt(ball.style.left) > 95) {
+    } else if (parseInt(ball.style.left) > 100) {
       document.getElementById("scoreboard1").innerHTML = ++num2;
       ball.style.top = startTopBall+"vh"
       ball.style.left = startLeftBall+"vw"
