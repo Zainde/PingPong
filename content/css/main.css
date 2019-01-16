@@ -68,6 +68,7 @@ body{
   background-repeat:repeat;
 }
 .sizeForm1, .sizeForm2{
+  margin-top:5px;
   width:40vh!important;
   display: block!important;
   margin-left: auto!important;
