@@ -35,10 +35,10 @@ num1=0
 num2=0
 startcount=0
 
-startLeftBall=gameWidth/percentageWidth/2
+startLeftBall=gameWidth/percentageWidth/1.995
 gameTop=(ptTotalHeight + rbTotalHeight) / percentageHeight
 gameBottom = gameHeight / percentageHeight
-startTopBall=gameTop + gameBottom / 2
+startTopBall=gameTop + gameBottom / 2.15
 batCornerTop=12
 batCornerBottom=5
 batMiddleTop=5
@@ -152,43 +152,43 @@ function ballSpeed() {
   x = ball.x;
   y = ball.y;
 // making sure the ball doesn't get stuck between the ydegrees values of 1 and -1, will make the ball "shake" but it will still move
-if (ydegrees < 1 && ydegrees > -1) {
-  if (ydegrees > 0) {
-  if (ydegrees < 1 && ydegrees > 0.75) {
-      ball.style.top = parseInt(ball.style.top) + 1 + "vh";
-  } if (ydegrees < 0.75 && ydegrees > 0.50) {
-      startcount++
-      if (startcount % 2 === 0) {
-        ball.style.top = parseInt(ball.style.top) + 1 + "vh";
-      }
-  } if (ydegrees < 0.50 && ydegrees > 0.0) {
-      startcount++
-      if (startcount % 3 === 0) {
-        ball.style.top = parseInt(ball.style.top) + 1 + "vh";
-      }
-    }
-     // if (ydegrees < 0.25 && ydegrees > -0.25) {
-    //   ball.style.top = parseInt(ball.style.top) + 0 + "vh";
-    // }
-  } else {
-    if (ydegrees > -1 && ydegrees < -0.75) {
-        ball.style.top = parseInt(ball.style.top) - 1 + "vh";
-    } if (ydegrees > -0.75 && ydegrees < -0.50) {
-        startcount++
-        if (startcount % 2 === 0) {
-          ball.style.top = parseInt(ball.style.top) - 1 + "vh";
-        }
-    } if (ydegrees > -0.50 && ydegrees < -0.0) {
-        startcount++
-        if (startcount % 3 === 0) {
-          ball.style.top = parseInt(ball.style.top) - 1 + "vh";
-        }
-      }
-       // if (ydegrees < 0.25 && ydegrees > -0.25) {
-      //   ball.style.top = parseInt(ball.style.top) - 0 + "vh";
-      // }
-  }
-}
+// if (ydegrees < 1 && ydegrees > -1) {
+//   if (ydegrees > 0) {
+//   if (ydegrees < 1 && ydegrees > 0.75) {
+//       ball.style.top = parseInt(ball.style.top) + 1 + "vh";
+//   } if (ydegrees < 0.75 && ydegrees > 0.50) {
+//       startcount++
+//       if (startcount % 2 === 0) {
+//         ball.style.top = parseInt(ball.style.top) + 1 + "vh";
+//       }
+//   } if (ydegrees < 0.50 && ydegrees > 0.0) {
+//       startcount++
+//       if (startcount % 3 === 0) {
+//         ball.style.top = parseInt(ball.style.top) + 1 + "vh";
+//       }
+//     }
+//      // if (ydegrees < 0.25 && ydegrees > -0.25) {
+//     //   ball.style.top = parseInt(ball.style.top) + 0 + "vh";
+//     // }
+//   } else {
+//     if (ydegrees > -1 && ydegrees < -0.75) {
+//         ball.style.top = parseInt(ball.style.top) - 1 + "vh";
+//     } if (ydegrees > -0.75 && ydegrees < -0.50) {
+//         startcount++
+//         if (startcount % 2 === 0) {
+//           ball.style.top = parseInt(ball.style.top) - 1 + "vh";
+//         }
+//     } if (ydegrees > -0.50 && ydegrees < -0.0) {
+//         startcount++
+//         if (startcount % 3 === 0) {
+//           ball.style.top = parseInt(ball.style.top) - 1 + "vh";
+//         }
+//       }
+//        // if (ydegrees < 0.25 && ydegrees > -0.25) {
+//       //   ball.style.top = parseInt(ball.style.top) - 0 + "vh";
+//       // }
+//   }
+// }
 // making sure the balls moves as it should when it hits the p2 controller on different positions
   if (parseInt(ball.style.left) >= parseInt(p2.style.left) && parseInt(ball.style.left) <= parseInt(p2.style.left)) {
     if (parseInt(ball.style.top) <= parseInt(p2.style.top) + batCornerTop && parseInt(ball.style.top) >= parseInt(p2.style.top) - batCornerBottom) {
@@ -305,7 +305,7 @@ if (ydegrees < 1 && ydegrees > -1) {
   // if (ydegrees < 0.25 && ydegrees > -0.25) {
   //   ball.style.top = parseInt(ball.style.top) + 0 + "vh";
   // } else {
-    ball.style.top = parseInt(ball.style.top) + ydegrees + "vh";
+    ball.style.top = parseInt(ball.style.top) + 0 + "vh";
   // }
 // scoreboard code, makes the ball reset after it hits either end of the game behind the players and gives the opponent player a point
     if (parseInt(ball.style.left) < 0) {
