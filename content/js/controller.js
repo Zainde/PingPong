@@ -107,7 +107,7 @@ countTime=0
     if (countTime === 0) {
       ballSpeed();
     }
-  }, 40);
+  }, 55);
 };
 // some math to calculate the ball movement along the x axis
 vx = Math.random() * 500 - 250;
