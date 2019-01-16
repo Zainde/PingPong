@@ -1,30 +1,49 @@
 // making variables for the scoreboard numbers, a counter and constants for player 1, 2 and the ball
+const p2 = document.getElementById("p2");
+const p1 = document.getElementById("p1");
+const ball = document.getElementById("ball");
 
 windowHeight = window.innerHeight;
-
 windowWidth = window.innerWidth;
-
 percentageHeight = windowHeight / 100;
-
 percentageWidth = windowWidth / 100;
 
+pointtavle = document.getElementsByClassName("pointtavle")[0];
+ptMarginTop = parseInt(getComputedStyle(pointtavle).getPropertyValue("margin-top"));
+ptMarginBottom = parseInt(getComputedStyle(pointtavle).getPropertyValue("margin-bottom"));
+ptHeight = parseInt(getComputedStyle(pointtavle).height);
+
+ptTotalHeight = ptMarginTop + ptMarginBottom + ptHeight;
+
+resetButton = document.getElementsByClassName("reset")[0];
+rbMarginTop = parseInt(getComputedStyle(resetButton).getPropertyValue("margin-top"));
+rbMarginBottom = parseInt(getComputedStyle(resetButton).getPropertyValue("margin-bottom"));
+rbHeight = parseInt(getComputedStyle(resetButton).height);
+
+rbTotalHeight = rbMarginTop + rbMarginBottom + rbHeight;
+
+gameTotalWidth = parseInt(getComputedStyle(document.getElementsByClassName('col')[0]).width);
+gamePaddingLeft = parseInt(getComputedStyle(document.getElementsByClassName('col')[0]).getPropertyValue("padding-left"));
+gamePaddingRight = parseInt(getComputedStyle(document.getElementsByClassName('col')[0]).getPropertyValue("padding-right"));
+
+gameHeight = parseInt(getComputedStyle(document.getElementsByClassName('col')[0]).height);
+gameWidth = gameTotalWidth-gamePaddingLeft-gamePaddingRight/2
+
+ballHeight = parseInt(getComputedStyle(ball).height)/percentageHeight;
 
 num1=0
 num2=0
 startcount=0
 
-startTopBall=percentageHeight * 3.92
-startLeftBall=percentageWidth * 2.58
-gameTop=percentageHeight * 1.3
-gameBottom = percentageHeight * 5.5
+startLeftBall=gameWidth/percentageWidth/2
+gameTop=(ptTotalHeight + rbTotalHeight) / percentageHeight
+gameBottom = gameHeight / percentageHeight
+startTopBall=gameTop + gameBottom / 2
 batCornerTop=12
 batCornerBottom=5
 batMiddleTop=5
 batMiddleBottom=0
 
-const p2 = document.getElementById("p2");
-const p1 = document.getElementById("p1");
-const ball = document.getElementById("ball");
 ball.style.top = startTopBall+"vh"
 ball.style.left = startLeftBall+"vw"
 p2.style.top = startTopBall + "vh"
@@ -257,7 +276,7 @@ if (ydegrees < 1 && ydegrees > -1) {
     }
   }
 // makes the ball confined to the game, so it can't go over or under the sides
-  if (parseInt(ball.style.top) <= gameTop && ydegrees < 0 || parseInt(ball.style.top) >= gameBottom * 1.2 && ydegrees > 0) {
+  if (parseInt(ball.style.top) <= gameTop && ydegrees < 0 || parseInt(ball.style.top) >= gameBottom + gameTop - ballHeight && ydegrees > 0) {
     ydegrees = ydegrees * -1;
   }
 // makes the ball move continuously in the given direction
