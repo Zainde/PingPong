@@ -48,24 +48,37 @@ ball.style.top = startTopBall+"vh"
 ball.style.left = startLeftBall+"vw"
 p2.style.top = startTopBall + "vh"
 p1.style.top = startTopBall + "vh"
-
+// var map = {}; // You could also use an array
+// onkeydown = onkeyup = function(e){
+//     e = e || event; // to deal with IE
+//     map[e.keyCode] = e.type == 'keydown';
+//     /* insert conditional here */
+// }
 // making an add event listener so we can use the keyboard for movement
+// document.addEventListener('keyup', (event) => {
+//   const keyName = event.key;
+//   map[keyName] = event.type == "keydown";
+// console.log(map);
+// });
+
 document.addEventListener('keydown', (event) => {
   const keyName = event.key;
+// map[keyName] = event.type == "keydown";
+// console.log(map);
 
 if(keyName == "W" || keyName == "w"){
   if (parseInt(p1.style.top) <= gameTop) {
     return;
   } else {
-    p1.style.top = parseInt(p1.style.top) - percentageHeight / 2 + "vh";
+    p1.style.top = parseInt(p1.style.top) - percentageHeight / gameHeight * 150 + "vh";
   }
 }
 
 if(keyName == "S" || keyName == "s"){
-  if (parseInt(p1.style.top) >= gameBottom) {
+  if (parseInt(p1.style.top) >= gameBottom + 2) {
     return;
   } else {
-    p1.style.top = parseInt(p1.style.top) + percentageHeight / 2 + "vh";
+    p1.style.top = parseInt(p1.style.top) + percentageHeight / gameHeight * 150 + "vh";
   }
 }
 
@@ -73,15 +86,15 @@ if(keyName == "38" || keyName == "ArrowUp"){
   if (parseInt(p2.style.top) <= gameTop) {
     return;
   } else {
-    p2.style.top = parseInt(p2.style.top) - percentageHeight / 2 + "vh";
+    p2.style.top = parseInt(p2.style.top) - percentageHeight / gameHeight * 150 + "vh";
   }
 }
 
 if(keyName == "40" || keyName == "ArrowDown"){
-  if (parseInt(p2.style.top) >= gameBottom) {
+  if (parseInt(p2.style.top) >= gameBottom + 2) {
     return;
   } else{
-  p2.style.top = parseInt(p2.style.top) + percentageHeight / 2 + "vh";
+  p2.style.top = parseInt(p2.style.top) + percentageHeight / gameHeight * 150 + "vh";
   }
 }
 
