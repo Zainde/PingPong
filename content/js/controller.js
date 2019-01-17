@@ -316,7 +316,8 @@ if (ydegrees < 1 && ydegrees > -1) {
       // if there's more than 10 points end the game
       if (num1 == 10) {
         reset();
-        alert('A winner is you!\nPlayer Blue')
+        var pl2=document.getElementById("pl2").value;
+        alert('A winner is you!\n'+pl2)
       }
 
     } else if (parseInt(ball.style.left) > 100) {
@@ -326,7 +327,10 @@ if (ydegrees < 1 && ydegrees > -1) {
       // if there's more than 10 points end the game
       if (num2 == 10) {
         reset();
-        alert('A winner is you!\nPlayer Red')
+        var pl1=document.getElementById("pl1").value;
+        alert('A winner is you!\n'+pl1)
+
+
       }
     }
 
