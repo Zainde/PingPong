@@ -2,9 +2,6 @@
 const p2 = document.getElementById("p2");
 const p1 = document.getElementById("p1");
 const ball = document.getElementById("ball");
-var audio = document.getElementById("audiopoint");
-var bat1 = document.getElementById("audiobat1");
-var bat2 = document.getElementById("audiobat2");
 
 windowHeight = window.innerHeight;
 windowWidth = window.innerWidth;
@@ -51,45 +48,33 @@ ball.style.top = startTopBall+"vh"
 ball.style.left = startLeftBall+"vw"
 p2.style.top = startTopBall + "vh"
 p1.style.top = startTopBall + "vh"
-// var map = {}; // You could also use an array
-// onkeydown = onkeyup = function(e){
-//     e = e || event; // to deal with IE
-//     map[e.keyCode] = e.type == 'keydown';
-//     /* insert conditional here */
-// }
-// making an add event listener so we can use the keyboard for movement
-// document.addEventListener('keyup', (event) => {
-//   const keyName = event.key;
-//   map[keyName] = event.type == "keydown";
-// console.log(map);
-// });
+var map = []; // You could also use an array
 
+document.addEventListener('keyup', (event) => {
+  const keyName = event.key;
+  map[keyName] = event.type == "keydown";
+});
+// making an add event listener so we can use the keyboard for movement
 document.addEventListener('keydown', (event) => {
   const keyName = event.key;
-// map[keyName] = event.type == "keydown";
-// console.log(map);
-
-if(keyName == "W" || keyName == "w"){
+map[keyName] = event.type == "keydown";
+if(map.W || map.w){
   if (parseFloat(p1.style.top) <= gameTop) {
     return;
   } else {
     p1.style.top = parseFloat(p1.style.top) - (percentageHeight / gameHeight * 150) + "vh";
   }
-  console.log(p1.style.top);
-  console.log((percentageHeight / gameHeight * 150));
 }
 
-if(keyName == "S" || keyName == "s"){
+if(map.S || map.s){
   if (parseFloat(p1.style.top) >= gameBottom +2) {
     return;
   } else {
     p1.style.top = parseFloat(p1.style.top) + (percentageHeight / gameHeight * 150) + "vh";
   }
-  console.log(p1.style.top);
-  console.log((percentageHeight / gameHeight * 150));
 }
 
-if(keyName == "38" || keyName == "ArrowUp"){
+if(map.ArrowUp){
   if (parseFloat(p2.style.top) <= gameTop) {
     return;
   } else {
@@ -97,13 +82,14 @@ if(keyName == "38" || keyName == "ArrowUp"){
   }
 }
 
-if(keyName == "40" || keyName == "ArrowDown"){
+if(map.ArrowDown){
   if (parseFloat(p2.style.top) >= gameBottom +2) {
     return;
   } else{
   p2.style.top = parseFloat(p2.style.top) + (percentageHeight / gameHeight * 150) + "vh";
   }
 }
+
 
 });
 
@@ -198,9 +184,8 @@ if (ydegrees < 1 && ydegrees > -1) {
 }
 // making sure the balls moves as it should when it hits the p2 controller on different positions
   if (parseInt(ball.style.left) >= parseInt(p2.style.left) && parseInt(ball.style.left) <= parseInt(p2.style.left)) {
-    if (parseInt(ball.style.top) <= parseInt(p2.style.top) + batCornerTop && parseInt(ball.style.top) >= parseInt(p2.style.top) - batCornerBottom) {
+    if (parseInt(ball.style.top) <= parseInt(p2.style.top) + 12 && parseInt(ball.style.top) >= parseInt(p2.style.top) - 2) {
       // makes sure the ball changes directions along the x axis when it "hits" the controller
-      bat1.play();
       vx = vx * -1;
       // making the ball go in different angles when hitting different parts of the controller
       if (parseInt(ball.style.top) >= parseInt(p2.style.top) + 6) {
@@ -236,7 +221,6 @@ if (ydegrees < 1 && ydegrees > -1) {
             }
           }
           else if (parseInt(ball.style.top) == parseInt(p2.style.top)) {
-            console.log(2);
           } else{
             // making the ball move less straight when hitting the bottom part of the controller
             if (ydegrees > 0) {
@@ -251,10 +235,9 @@ if (ydegrees < 1 && ydegrees > -1) {
   }
   // making sure the balls moves as it should when it hits the p1 controller on different positions
   if (parseInt(ball.style.left) >= parseInt(p1.style.left) && parseInt(ball.style.left) <= parseInt(p1.style.left)) {
-    if (parseInt(ball.style.top) <= parseInt(p1.style.top) + batCornerTop && parseInt(ball.style.top) >= parseInt(p1.style.top) - batCornerBottom) {
+    if (parseInt(ball.style.top) <= parseInt(p1.style.top) + 12 && parseInt(ball.style.top) >= parseInt(p1.style.top) - 2) {
 
       // makes sure the ball changes directions along the x axis when it "hits" the controller
-      bat2.play();
       vx = vx * -1;
       // making the ball go in different angles when hitting different parts of the controller
       if (parseInt(ball.style.top) >= parseInt(p1.style.top) + 6) {
@@ -323,26 +306,35 @@ if (ydegrees < 1 && ydegrees > -1) {
 // scoreboard code, makes the ball reset after it hits either end of the game behind the players and gives the opponent player a point
     if (parseInt(ball.style.left) < 0) {
       document.getElementById("scoreboard2").innerHTML = ++num1;
-      audio.play();
       ball.style.top = startTopBall+"vh"
       ball.style.left = startLeftBall+"vw"
-
       // if there's more than 10 points end the game
       if (num1 == 10) {
         reset();
-        alert('A winner is you!\nPlayer Blue')
+        var pl2=document.getElementById("pl2").value;
+        if (pl2) {
+          alert('A winner is you!\n'+pl2)
+        }else {
+          alert('A winner is you!\nPlayer 2')
+
+        }
       }
 
-    } else if (parseInt(ball.style.left) > 100) {
+    } else if (parseInt(ball.style.left) > 98) {
       document.getElementById("scoreboard1").innerHTML = ++num2;
-      audio.play();
       ball.style.top = startTopBall+"vh"
       ball.style.left = startLeftBall+"vw"
       // if there's more than 10 points end the game
       if (num2 == 10) {
         reset();
-        alert('A winner is you!\nPlayer Red')
-      }
-    }
+        var pl1=document.getElementById("pl1").value;
+        if (pl1) {
+          alert('A winner is you!\n'+pl1)
+        }else {
+          alert('A winner is you!\nPlayer 1')
 
+        }
+        }
+
+    }
 }
