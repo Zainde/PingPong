@@ -39,7 +39,7 @@ startLeftBall=gameWidth/percentageWidth
 gameTop=(ptTotalHeight + rbTotalHeight) / percentageHeight
 gameBottom = gameHeight / percentageHeight
 startTopBall=gameTop + gameBottom / 2.15
-batCornerTop=12
+batCornerTop=7
 batCornerBottom=5
 batMiddleTop=5
 batMiddleBottom=0
@@ -48,32 +48,23 @@ ball.style.top = startTopBall+"vh"
 ball.style.left = startLeftBall+"vw"
 p2.style.top = startTopBall + "vh"
 p1.style.top = startTopBall + "vh"
-// var map = {}; // You could also use an array
-// onkeydown = onkeyup = function(e){
-//     e = e || event; // to deal with IE
-//     map[e.keyCode] = e.type == 'keydown';
-//     /* insert conditional here */
-// }
-// making an add event listener so we can use the keyboard for movement
-// document.addEventListener('keyup', (event) => {
-//   const keyName = event.key;
-//   map[keyName] = event.type == "keydown";
-// console.log(map);
-// });
+var map = {}; // You could also use an array
 
+document.addEventListener('keyup', (event) => {
+  const keyName = event.key;
+  map[keyName] = event.type == "keydown";
+});
+// making an add event listener so we can use the keyboard for movement
 document.addEventListener('keydown', (event) => {
   const keyName = event.key;
-// map[keyName] = event.type == "keydown";
-// console.log(map);
-
+map[keyName] = event.type == "keydown";
+if (map[keyName]==true) {
 if(keyName == "W" || keyName == "w"){
   if (parseFloat(p1.style.top) <= gameTop) {
     return;
   } else {
     p1.style.top = parseFloat(p1.style.top) - (percentageHeight / gameHeight * 150) + "vh";
   }
-  console.log(p1.style.top);
-  console.log((percentageHeight / gameHeight * 150));
 }
 
 if(keyName == "S" || keyName == "s"){
@@ -100,6 +91,7 @@ if(keyName == "40" || keyName == "ArrowDown"){
   } else{
   p2.style.top = parseFloat(p2.style.top) + (percentageHeight / gameHeight * 150) + "vh";
   }
+}
 }
 
 });
@@ -313,7 +305,7 @@ if (ydegrees < 1 && ydegrees > -1) {
   // if (ydegrees < 0.25 && ydegrees > -0.25) {
   //   ball.style.top = parseInt(ball.style.top) + 0 + "vh";
   // } else {
-    ball.style.top = parseInt(ball.style.top) + ydegrees + "vh";
+    ball.style.top = parseInt(ball.style.top) + 0 + "vh";
   // }
 // scoreboard code, makes the ball reset after it hits either end of the game behind the players and gives the opponent player a point
     if (parseInt(ball.style.left) < 0) {
