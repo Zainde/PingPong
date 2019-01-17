@@ -48,7 +48,7 @@ ball.style.top = startTopBall+"vh"
 ball.style.left = startLeftBall+"vw"
 p2.style.top = startTopBall + "vh"
 p1.style.top = startTopBall + "vh"
-var map = {}; // You could also use an array
+var map = []; // You could also use an array
 
 document.addEventListener('keyup', (event) => {
   const keyName = event.key;
@@ -58,8 +58,7 @@ document.addEventListener('keyup', (event) => {
 document.addEventListener('keydown', (event) => {
   const keyName = event.key;
 map[keyName] = event.type == "keydown";
-if (map[keyName]==true) {
-if(keyName == "W" || keyName == "w"){
+if(map.W || map.w){
   if (parseFloat(p1.style.top) <= gameTop) {
     return;
   } else {
@@ -67,17 +66,15 @@ if(keyName == "W" || keyName == "w"){
   }
 }
 
-if(keyName == "S" || keyName == "s"){
+if(map.S || map.s){
   if (parseFloat(p1.style.top) >= gameBottom +2) {
     return;
   } else {
     p1.style.top = parseFloat(p1.style.top) + (percentageHeight / gameHeight * 150) + "vh";
   }
-  console.log(p1.style.top);
-  console.log((percentageHeight / gameHeight * 150));
 }
 
-if(keyName == "38" || keyName == "ArrowUp"){
+if(map.ArrowUp){
   if (parseFloat(p2.style.top) <= gameTop) {
     return;
   } else {
@@ -85,14 +82,14 @@ if(keyName == "38" || keyName == "ArrowUp"){
   }
 }
 
-if(keyName == "40" || keyName == "ArrowDown"){
+if(map.ArrowDown){
   if (parseFloat(p2.style.top) >= gameBottom +2) {
     return;
   } else{
   p2.style.top = parseFloat(p2.style.top) + (percentageHeight / gameHeight * 150) + "vh";
   }
 }
-}
+
 
 });
 
@@ -190,7 +187,6 @@ if (ydegrees < 1 && ydegrees > -1) {
     if (parseInt(ball.style.top) <= parseInt(p2.style.top) + 12 && parseInt(ball.style.top) >= parseInt(p2.style.top) - 2) {
       // makes sure the ball changes directions along the x axis when it "hits" the controller
       vx = vx * -1;
-      console.log(ball.style.top, p2.style.top);
       // making the ball go in different angles when hitting different parts of the controller
       if (parseInt(ball.style.top) >= parseInt(p2.style.top) + 6) {
         if (parseInt(ball.style.top) >= parseInt(p2.style.top) + 10) {
@@ -225,7 +221,6 @@ if (ydegrees < 1 && ydegrees > -1) {
             }
           }
           else if (parseInt(ball.style.top) == parseInt(p2.style.top)) {
-            console.log(2);
           } else{
             // making the ball move less straight when hitting the bottom part of the controller
             if (ydegrees > 0) {
