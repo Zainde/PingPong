@@ -81,6 +81,15 @@ body{
   margin-right: auto!important;
   background-image:url("../image/background1.png")!important;
 }
-
+.venom{
+  bottom:0;
+  margin-left: -15px;
+  margin-top: 7px;
+  display: none; /* Hidden by default */
+    position: fixed;
+  width:20vh!important;
+  display: block!important;
+  margin-left: left!important;
+}
 
 /*# sourceMappingURL=main.css.map */
