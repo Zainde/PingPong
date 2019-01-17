@@ -317,10 +317,15 @@ if (ydegrees < 1 && ydegrees > -1) {
       if (num1 == 10) {
         reset();
         var pl2=document.getElementById("pl2").value;
-        alert('A winner is you!\n'+pl2)
+        if (pl2) {
+          alert('A winner is you!\n'+pl2)
+        }else {
+          alert('A winner is you!\nPlayer 2')
+
+        }
       }
 
-    } else if (parseInt(ball.style.left) > 100) {
+    } else if (parseInt(ball.style.left) > 98) {
       document.getElementById("scoreboard1").innerHTML = ++num2;
       ball.style.top = startTopBall+"vh"
       ball.style.left = startLeftBall+"vw"
@@ -328,10 +333,13 @@ if (ydegrees < 1 && ydegrees > -1) {
       if (num2 == 10) {
         reset();
         var pl1=document.getElementById("pl1").value;
-        alert('A winner is you!\n'+pl1)
+        if (pl1) {
+          alert('A winner is you!\n'+pl1)
+        }else {
+          alert('A winner is you!\nPlayer 1')
 
+        }
+        }
 
-      }
     }
-
 }
