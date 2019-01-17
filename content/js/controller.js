@@ -2,6 +2,9 @@
 const p2 = document.getElementById("p2");
 const p1 = document.getElementById("p1");
 const ball = document.getElementById("ball");
+var audio = document.getElementById("audiopoint");
+var bat1 = document.getElementById("audiobat1");
+var bat2 = document.getElementById("audiobat2");
 
 windowHeight = window.innerHeight;
 windowWidth = window.innerWidth;
@@ -189,6 +192,7 @@ if (ydegrees < 1 && ydegrees > -1) {
   if (parseInt(ball.style.left) >= parseInt(p2.style.left) && parseInt(ball.style.left) <= parseInt(p2.style.left)) {
     if (parseInt(ball.style.top) <= parseInt(p2.style.top) + batCornerTop && parseInt(ball.style.top) >= parseInt(p2.style.top) - batCornerBottom) {
       // makes sure the ball changes directions along the x axis when it "hits" the controller
+      bat1.play();
       vx = vx * -1;
       // making the ball go in different angles when hitting different parts of the controller
       if (parseInt(ball.style.top) >= parseInt(p2.style.top) + 6) {
@@ -242,6 +246,7 @@ if (ydegrees < 1 && ydegrees > -1) {
     if (parseInt(ball.style.top) <= parseInt(p1.style.top) + batCornerTop && parseInt(ball.style.top) >= parseInt(p1.style.top) - batCornerBottom) {
 
       // makes sure the ball changes directions along the x axis when it "hits" the controller
+      bat2.play();
       vx = vx * -1;
       // making the ball go in different angles when hitting different parts of the controller
       if (parseInt(ball.style.top) >= parseInt(p1.style.top) + 6) {
@@ -310,8 +315,10 @@ if (ydegrees < 1 && ydegrees > -1) {
 // scoreboard code, makes the ball reset after it hits either end of the game behind the players and gives the opponent player a point
     if (parseInt(ball.style.left) < 0) {
       document.getElementById("scoreboard2").innerHTML = ++num1;
+      audio.play();
       ball.style.top = startTopBall+"vh"
       ball.style.left = startLeftBall+"vw"
+
       // if there's more than 10 points end the game
       if (num1 == 10) {
         reset();
@@ -320,6 +327,7 @@ if (ydegrees < 1 && ydegrees > -1) {
 
     } else if (parseInt(ball.style.left) > 100) {
       document.getElementById("scoreboard1").innerHTML = ++num2;
+      audio.play();
       ball.style.top = startTopBall+"vh"
       ball.style.left = startLeftBall+"vw"
       // if there's more than 10 points end the game
