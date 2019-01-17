@@ -58,9 +58,7 @@ document.addEventListener('keyup', (event) => {
 document.addEventListener('keydown', (event) => {
   const keyName = event.key;
 map[keyName] = event.type == "keydown";
-console.log(map);
-if (map[keyName]==true) {
-if(keyName == "W" || keyName == "w"){
+if(map.W || map.w){
   if (parseFloat(p1.style.top) <= gameTop) {
     return;
   } else {
@@ -68,7 +66,7 @@ if(keyName == "W" || keyName == "w"){
   }
 }
 
-if(keyName == "S" || keyName == "s"){
+if(map.S || map.s){
   if (parseFloat(p1.style.top) >= gameBottom +2) {
     return;
   } else {
@@ -76,7 +74,7 @@ if(keyName == "S" || keyName == "s"){
   }
 }
 
-if(keyName == "38" || keyName == "ArrowUp"){
+if(map.ArrowUp){
   if (parseFloat(p2.style.top) <= gameTop) {
     return;
   } else {
@@ -84,14 +82,14 @@ if(keyName == "38" || keyName == "ArrowUp"){
   }
 }
 
-if(keyName == "40" || keyName == "ArrowDown"){
+if(map.ArrowDown){
   if (parseFloat(p2.style.top) >= gameBottom +2) {
     return;
   } else{
   p2.style.top = parseFloat(p2.style.top) + (percentageHeight / gameHeight * 150) + "vh";
   }
 }
-}
+
 
 });
 
