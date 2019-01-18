@@ -60,11 +60,33 @@
       <img src="content/image/back1.svg" alt="">
     </div>
   </div>
-  <div>
+
+
+  <div class="container-fluid">
+    <div class="row">
+    <div class="col-6">
     <img src="content/image/venom1.svg" alt="" class="venom">
   </div>
-<button type="button" onclick="setInterval(()=>{cpu('p1')},1000)" name="button">test cpu p1</button>
-<button type="button" onclick="setInterval(()=>{cpu('p2')},1000)" name="button">test cpu p2</button>
+
+
+    <div class="col-6">
+    <img src="content/image/venom2.svg" alt="" class="venom2">
+  </div>
+</div>
+</div>
+
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+    <button type="button" class="cpu1 btn btn-outline-success" onclick="setTimeout(()=>{cpu('p1')},1000)" name="button">CPU ONE</button>
+  </div>
+  <div class="col-6">
+<button type="button" class="cpu2 btn btn-outline-success" onclick="setTimeout(()=>{cpu('p2')},1000)" name="button">CPU TWO</button>
+</div>
+</div>
+</div>
 
   <script src="content/js/reset.js"></script>
   <script src="content/js/controller.js"></script>

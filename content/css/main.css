@@ -83,13 +83,34 @@ body{
 }
 .venom{
   bottom:0;
-  margin-left: -15px;
+  left: 0;
   margin-top: 7px;
-  display: none; /* Hidden by default */
-    position: fixed;
+  position: fixed;
   width:20vh!important;
   display: block!important;
   margin-left: left!important;
 }
+.venom2{
+  bottom:0;
+  right: 0;
+  margin-left: auto;
+  margin-top: 7px;
+  position: fixed;
+  width:20vh!important;
+  display: block!important;
+}
+.cpu1{
+  margin-top:10px;
+  display: block!important;
+  margin-left: auto!important;
+  margin-right: 0!important;
+}
+.cpu2{
+  margin-top:10px;
+  display: block!important;
+  margin-left: 0!important;
+  margin-right: auto!important;
+}
+
 
 /*# sourceMappingURL=main.css.map */
