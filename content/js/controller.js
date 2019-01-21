@@ -103,7 +103,7 @@ countTime=0
     if (countTime === 0) {
       ballSpeed();
     }
-  }, 55);
+  }, 40);
 };
 // some math to calculate the ball movement along the x axis
 vx = Math.random() * 500 - 250;
@@ -163,7 +163,7 @@ if (ydegrees < 1 && ydegrees > -1) {
         ball.style.top = parseInt(ball.style.top) + 1 + "vh";
       }
     }
-    
+
      // if (ydegrees < 0.25 && ydegrees > -0.25) {
     //   ball.style.top = parseInt(ball.style.top) + 0 + "vh";
     // }
