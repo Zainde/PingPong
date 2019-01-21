@@ -5,6 +5,7 @@ const ball = document.getElementById("ball");
 var audio = document.getElementById("audiopoint");
 var bat1 = document.getElementById("audiobat1");
 var bat2 = document.getElementById("audiobat2");
+document.getElementById("audiopoint").volume = 0.1;
 
 windowHeight = window.innerHeight;
 windowWidth = window.innerWidth;
@@ -30,18 +31,31 @@ gamePaddingLeft = parseInt(getComputedStyle(document.getElementsByClassName('col
 gamePaddingRight = parseInt(getComputedStyle(document.getElementsByClassName('col')[0]).getPropertyValue("padding-right"));
 
 gameHeight = parseInt(getComputedStyle(document.getElementsByClassName('col')[0]).height);
-gameWidth = (gameTotalWidth-gamePaddingLeft-gamePaddingRight)/2
+gameWidth = (gameTotalWidth-gamePaddingLeft-gamePaddingRight)
 
 ballHeight = parseInt(getComputedStyle(ball).height)/percentageHeight;
+
+p1.width
+console.log(p1.width);
+p2.width
+console.log(p2.width);
+var p1width = p1.width/percentageWidth;
+var p2width = p2.width/percentageWidth;
+p1.style.left = (gamePaddingLeft/percentageWidth)+p1width + "vw";
+p2.style.right = (gamePaddingRight/percentageWidth)+p2width + "vw";
+
 
 num1=0
 num2=0
 startcount=0
 
-startLeftBall=gameWidth/percentageWidth
+ball.height
+console.log(ball.height/percentageWidth);
+console.log(ballHeight);
+startLeftBall=(gameWidth/percentageWidth)/2
 gameTop=(ptTotalHeight + rbTotalHeight) / percentageHeight
 gameBottom = gameHeight / percentageHeight
-startTopBall=gameTop + gameBottom / 2.15
+startTopBall= gameTop + (gameBottom / 2) - ballHeight/2
 batCornerTop=12
 batCornerBottom=5
 batMiddleTop=5
@@ -103,7 +117,7 @@ countTime=0
     if (countTime === 0) {
       ballSpeed();
     }
-  }, 55);
+  }, 40);
 };
 // some math to calculate the ball movement along the x axis
 vx = Math.random() * 500 - 250;
@@ -163,7 +177,7 @@ if (ydegrees < 1 && ydegrees > -1) {
         ball.style.top = parseInt(ball.style.top) + 1 + "vh";
       }
     }
-    
+
      // if (ydegrees < 0.25 && ydegrees > -0.25) {
     //   ball.style.top = parseInt(ball.style.top) + 0 + "vh";
     // }

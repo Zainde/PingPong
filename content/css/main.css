@@ -75,7 +75,8 @@ body{
 }
 .sizeForm1, .sizeForm2{
   margin-top:5px;
-  width:40vh!important;
+  width:25vh!important;
+  text-align: center;
   display: block!important;
   margin-left: auto!important;
   margin-right: auto!important;
