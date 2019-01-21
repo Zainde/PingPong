@@ -5,6 +5,7 @@ const ball = document.getElementById("ball");
 var audio = document.getElementById("audiopoint");
 var bat1 = document.getElementById("audiobat1");
 var bat2 = document.getElementById("audiobat2");
+document.getElementById("audiopoint").volume = 0.1;
 
 windowHeight = window.innerHeight;
 windowWidth = window.innerWidth;
