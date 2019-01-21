@@ -30,18 +30,31 @@ gamePaddingLeft = parseInt(getComputedStyle(document.getElementsByClassName('col
 gamePaddingRight = parseInt(getComputedStyle(document.getElementsByClassName('col')[0]).getPropertyValue("padding-right"));
 
 gameHeight = parseInt(getComputedStyle(document.getElementsByClassName('col')[0]).height);
-gameWidth = (gameTotalWidth-gamePaddingLeft-gamePaddingRight)/2
+gameWidth = (gameTotalWidth-gamePaddingLeft-gamePaddingRight)
 
 ballHeight = parseInt(getComputedStyle(ball).height)/percentageHeight;
+
+p1.width
+console.log(p1.width);
+p2.width
+console.log(p2.width);
+var p1width = p1.width/percentageWidth;
+var p2width = p2.width/percentageWidth;
+p1.style.left = (gamePaddingLeft/percentageWidth)+p1width + "vw";
+p2.style.right = (gamePaddingRight/percentageWidth)+p2width + "vw";
+
 
 num1=0
 num2=0
 startcount=0
 
-startLeftBall=gameWidth/percentageWidth
+ball.height
+console.log(ball.height/percentageWidth);
+console.log(ballHeight);
+startLeftBall=(gameWidth/percentageWidth)/2
 gameTop=(ptTotalHeight + rbTotalHeight) / percentageHeight
 gameBottom = gameHeight / percentageHeight
-startTopBall=gameTop + gameBottom / 2.15
+startTopBall= gameTop + (gameBottom / 2) - ballHeight/2
 batCornerTop=12
 batCornerBottom=5
 batMiddleTop=5
