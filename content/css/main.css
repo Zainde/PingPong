@@ -51,21 +51,12 @@
 
 }
 
-
 .game {
-<<<<<<< HEAD
-  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
-=======
-<<<<<<< HEAD
-
-=======
-  border-bottom: 2px solid #000;
->>>>>>> 77e7ba23c186edd170e1a73ec1825b145363191b
+  border-top: 1px solid rgba(0,0,0,0.1);
   height: 40vh;
   padding-left: 15px;
   padding-right: 15px;
   margin-top: 15vh;
->>>>>>> 762911d6450d53bdc5d6e0ab23a90d3122943f1a
   /* background-image: url(/content/image/back1.svg);
   background-repeat: no-repeat; */
 }
@@ -162,7 +153,10 @@ input::placeholder {
   position:relative;
 }
 .col{
-  height: 33vh
+  margin-top: 3vh;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  height: 26vh;
+
 }
 
 
