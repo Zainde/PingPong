@@ -51,10 +51,21 @@
 
 }
 
+
 .game {
-  border-top: 2px solid #000;
+<<<<<<< HEAD
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+=======
+<<<<<<< HEAD
+
+=======
   border-bottom: 2px solid #000;
-  height: 287.25px;
+>>>>>>> 77e7ba23c186edd170e1a73ec1825b145363191b
+  height: 40vh;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 15vh;
+>>>>>>> 762911d6450d53bdc5d6e0ab23a90d3122943f1a
   /* background-image: url(/content/image/back1.svg);
   background-repeat: no-repeat; */
 }
@@ -135,11 +146,14 @@ input::placeholder {
   margin-left: auto!important;
   margin-right: 0!important;
   margin-bottom:0!important;
+  margin-top: 15vh;
 }
 .cpu2{
   display: block!important;
   margin-left: 0!important;
   margin-right: auto!important;
+  margin-top: 15vh;
+
 
 }
 
@@ -148,7 +162,7 @@ input::placeholder {
   position:relative;
 }
 .col{
-  height: 287.25px
+  height: 33vh
 }
 
 

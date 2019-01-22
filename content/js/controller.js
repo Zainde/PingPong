@@ -24,11 +24,11 @@ rbHeight = parseFloat(getComputedStyle(resetButton).height);
 
 rbTotalHeight = rbMarginTop + rbMarginBottom + rbHeight;
 
-gameTotalWidth = parseFloat(getComputedStyle(document.getElementsByClassName('col')[0]).width);
-gamePaddingLeft = parseFloat(getComputedStyle(document.getElementsByClassName('col')[0]).getPropertyValue("padding-left"));
-gamePaddingRight = parseFloat(getComputedStyle(document.getElementsByClassName('col')[0]).getPropertyValue("padding-right"));
-
-gameHeight = parseFloat(getComputedStyle(document.getElementsByClassName('col')[0]).height);
+gameTotalWidth = parseFloat(getComputedStyle(document.getElementsByClassName('game')[0]).width);
+gamePaddingLeft = parseFloat(getComputedStyle(document.getElementsByClassName('game')[0]).getPropertyValue("padding-left"));
+gamePaddingRight = parseFloat(getComputedStyle(document.getElementsByClassName('game')[0]).getPropertyValue("padding-right"));
+gamemarginHeight = parseFloat(getComputedStyle(document.getElementsByClassName('game')[0]).getPropertyValue("margin-top"));
+gameHeight = parseFloat(getComputedStyle(document.getElementsByClassName('game')[0]).height) + gamemarginHeight;
 gameWidth = (gameTotalWidth-gamePaddingLeft-gamePaddingRight)
 ballHeight = parseFloat(getComputedStyle(ball).height)/percentageHeight;
 
@@ -43,7 +43,7 @@ num2=0
 startcount=0
 
 startLeftBall=(gameWidth/percentageWidth)/2
-gameTop=(ptTotalHeight + rbTotalHeight) / percentageHeight
+gameTop=(ptTotalHeight + rbTotalHeight + gamemarginHeight) / percentageHeight
 gameBottom = gameHeight / percentageHeight
 startTopBall= gameTop + (gameBottom / 2) - ballHeight/2
 batCornerTop=12
@@ -145,7 +145,6 @@ ydegrees = vy/vx;
 //     ydegrees = 1;
 //   }
 // }
-console.log(p2.style.right);
 // function for the ball movement in the game
 function ballSpeed() {
   // 2 variables to get the balls x and y values
@@ -312,7 +311,7 @@ if (ydegrees < 1 && ydegrees > -1) {
   // if (ydegrees < 0.25 && ydegrees > -0.25) {
   //   ball.style.top = parseInt(ball.style.top) + 0 + "vh";
   // } else {
-    ball.style.top = parseInt(ball.style.top) + 0 + "vh";
+    ball.style.top = parseInt(ball.style.top) + ydegrees + "vh";
   // }
 // scoreboard code, makes the ball reset after it hits either end of the game behind the players and gives the opponent player a point
     if (parseInt(ball.style.left) < 0) {
