@@ -29,7 +29,7 @@ rbTotalHeight = rbMarginTop + rbMarginBottom + rbHeight;
 gameTotalWidth = parseFloat(getComputedStyle(document.getElementsByClassName('col')[0]).width);
 gamePaddingLeft = parseFloat(getComputedStyle(document.getElementsByClassName('col')[0]).getPropertyValue("padding-left"));
 gamePaddingRight = parseFloat(getComputedStyle(document.getElementsByClassName('col')[0]).getPropertyValue("padding-right"));
-
+console.log(document.getElementsByClassName('col')[0]);
 gameHeight = parseFloat(getComputedStyle(document.getElementsByClassName('col')[0]).height);
 gameWidth = (gameTotalWidth-gamePaddingLeft-gamePaddingRight)
 ballHeight = parseFloat(getComputedStyle(ball).height)/percentageHeight;
@@ -314,7 +314,7 @@ if (ydegrees < 1 && ydegrees > -1) {
   // if (ydegrees < 0.25 && ydegrees > -0.25) {
   //   ball.style.top = parseInt(ball.style.top) + 0 + "vh";
   // } else {
-    ball.style.top = parseInt(ball.style.top) + 0 + "vh";
+    ball.style.top = parseInt(ball.style.top) + ydegrees + "vh";
   // }
 // scoreboard code, makes the ball reset after it hits either end of the game behind the players and gives the opponent player a point
     if (parseInt(ball.style.left) < 0) {
