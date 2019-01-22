@@ -3,9 +3,7 @@ const p2 = document.getElementById("p2");
 const p1 = document.getElementById("p1");
 const ball = document.getElementById("ball");
 var audio = document.getElementById("audiopoint");
-var bat1 = document.getElementById("audiobat1");
-var bat2 = document.getElementById("audiobat2");
-document.getElementById("audiopoint").volume = 0.1;
+var bat = document.getElementById("audiobat");
 
 windowHeight = window.innerHeight;
 windowWidth = window.innerWidth;
@@ -196,7 +194,7 @@ if (ydegrees < 1 && ydegrees > -1) {
     if (parseInt(ball.style.top) <= parseInt(p2.style.top) + 12 && parseInt(ball.style.top) >= parseInt(p2.style.top) - 2) {
       // makes sure the ball changes directions along the x axis when it "hits" the controller
       vx = vx * -1;
-      bat1.play();
+      bat.play();
 
 
       // making the ball go in different angles when hitting different parts of the controller
@@ -248,7 +246,7 @@ if (ydegrees < 1 && ydegrees > -1) {
   // making sure the balls moves as it should when it hits the p1 controller on different positions
   if (parseInt(ball.style.left) >= parseInt(p1.style.left) && parseInt(ball.style.left) <= parseInt(p1.style.left)) {
     if (parseInt(ball.style.top) <= parseInt(p1.style.top) + 12 && parseInt(ball.style.top) >= parseInt(p1.style.top) - 2) {
-      bat2.play();
+      bat.play();
       // makes sure the ball changes directions along the x axis when it "hits" the controller
       vx = vx * -1;
       // making the ball go in different angles when hitting different parts of the controller
