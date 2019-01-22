@@ -53,8 +53,11 @@
 
 
 .game {
-  border-top: 2px solid rgba(0, 0, 0, 0.03);
-  height: 287.25px;
+  border-bottom: 2px solid #000;
+  height: 40vh;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 15vh;
   /* background-image: url(/content/image/back1.svg);
   background-repeat: no-repeat; */
 }
@@ -151,7 +154,7 @@ input::placeholder {
   position:relative;
 }
 .col{
-  height: 29vh
+  height: 33vh
 }
 
 
