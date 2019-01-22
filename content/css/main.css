@@ -52,10 +52,9 @@
 }
 
 .game {
-  /* border: 5px solid #000; */
-  /* width: 90vw;
-  height: 50.1vh;
-  margin-left: 5%; */
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  height: 287.25px;
   /* background-image: url(/content/image/back1.svg);
   background-repeat: no-repeat; */
 }
@@ -148,6 +147,7 @@ input::placeholder {
   width:200px;
   position:relative;
 }
+
 
 
 /*# sourceMappingURL=main.css.map */
