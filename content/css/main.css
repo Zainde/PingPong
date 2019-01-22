@@ -135,11 +135,14 @@ input::placeholder {
   margin-left: auto!important;
   margin-right: 0!important;
   margin-bottom:0!important;
+  margin-top: 15vh;
 }
 .cpu2{
   display: block!important;
   margin-left: 0!important;
   margin-right: auto!important;
+  margin-top: 15vh;
+
 
 }
 
@@ -148,7 +151,7 @@ input::placeholder {
   position:relative;
 }
 .col{
-  height: 287.25px
+  height: 29vh
 }
 
 
