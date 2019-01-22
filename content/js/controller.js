@@ -32,6 +32,10 @@ gamePaddingRight = parseFloat(getComputedStyle(document.getElementsByClassName('
 
 gameHeight = parseFloat(getComputedStyle(document.getElementsByClassName('col')[0]).height);
 gameWidth = (gameTotalWidth-gamePaddingLeft-gamePaddingRight)
+<<<<<<< HEAD
+=======
+console.log(gameHeight);
+>>>>>>> 07e7c07d198fef39265c7b0798b5ff94b79971a0
 ballHeight = parseFloat(getComputedStyle(ball).height)/percentageHeight;
 
 var p1width = p1.width/percentageWidth;
