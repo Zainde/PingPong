@@ -26,11 +26,11 @@ rbHeight = parseFloat(getComputedStyle(resetButton).height);
 
 rbTotalHeight = rbMarginTop + rbMarginBottom + rbHeight;
 
-gameTotalWidth = parseFloat(getComputedStyle(document.getElementsByClassName('col')[0]).width);
-gamePaddingLeft = parseFloat(getComputedStyle(document.getElementsByClassName('col')[0]).getPropertyValue("padding-left"));
-gamePaddingRight = parseFloat(getComputedStyle(document.getElementsByClassName('col')[0]).getPropertyValue("padding-right"));
-console.log(document.getElementsByClassName('col')[0]);
-gameHeight = parseFloat(getComputedStyle(document.getElementsByClassName('col')[0]).height);
+gameTotalWidth = parseFloat(getComputedStyle(document.getElementsByClassName('game')[0]).width);
+gamePaddingLeft = parseFloat(getComputedStyle(document.getElementsByClassName('game')[0]).getPropertyValue("padding-left"));
+gamePaddingRight = parseFloat(getComputedStyle(document.getElementsByClassName('game')[0]).getPropertyValue("padding-right"));
+gamemarginHeight = parseFloat(getComputedStyle(document.getElementsByClassName('game')[0]).getPropertyValue("margin-top"));
+gameHeight = parseFloat(getComputedStyle(document.getElementsByClassName('game')[0]).height) + gamemarginHeight;
 gameWidth = (gameTotalWidth-gamePaddingLeft-gamePaddingRight)
 ballHeight = parseFloat(getComputedStyle(ball).height)/percentageHeight;
 
@@ -45,7 +45,7 @@ num2=0
 startcount=0
 
 startLeftBall=(gameWidth/percentageWidth)/2
-gameTop=(ptTotalHeight + rbTotalHeight) / percentageHeight
+gameTop=(ptTotalHeight + rbTotalHeight + gamemarginHeight) / percentageHeight
 gameBottom = gameHeight / percentageHeight
 startTopBall= gameTop + (gameBottom / 2) - ballHeight/2
 batCornerTop=12
@@ -147,7 +147,6 @@ ydegrees = vy/vx;
 //     ydegrees = 1;
 //   }
 // }
-console.log(p2.style.right);
 // function for the ball movement in the game
 function ballSpeed() {
   // 2 variables to get the balls x and y values
