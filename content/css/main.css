@@ -97,6 +97,7 @@ body, html {
   display: block!important;
   margin-left: auto!important;
   margin-right: auto!important;
+  color: white;
 
   /* background-image:url("../image/background1.png")!important; */
 }
