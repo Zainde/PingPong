@@ -49,9 +49,6 @@ num1=0
 num2=0
 startcount=0
 
-ball.height
-console.log(ball.height/percentageWidth);
-console.log(ballHeight);
 startLeftBall=(gameWidth/percentageWidth)/2
 gameTop=(ptTotalHeight + rbTotalHeight) / percentageHeight
 gameBottom = gameHeight / percentageHeight
