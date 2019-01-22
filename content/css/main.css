@@ -53,7 +53,7 @@
 
 
 .game {
-  border-top: 1px solid #000;
+  border-top: 1px solid rgba(0,0,0,0.1);
   height: 40vh;
   padding-left: 15px;
   padding-right: 15px;
@@ -155,7 +155,7 @@ input::placeholder {
 }
 .col{
   margin-top: 3vh;
-  border-top: 1px solid #000;
+  border-top: 1px solid rgba(0,0,0,0.1);
   height: 26vh;
 }
 
