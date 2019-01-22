@@ -51,17 +51,10 @@
 
 }
 
-
 .game {
-<<<<<<< HEAD
-
-=======
+  border-top: 2px solid #000;
   border-bottom: 2px solid #000;
-  height: 40vh;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-top: 15vh;
->>>>>>> 762911d6450d53bdc5d6e0ab23a90d3122943f1a
+  height: 287.25px;
   /* background-image: url(/content/image/back1.svg);
   background-repeat: no-repeat; */
 }
@@ -158,7 +151,7 @@ input::placeholder {
   position:relative;
 }
 .col{
-  height: 33vh
+  height: 29vh
 }
 
 
