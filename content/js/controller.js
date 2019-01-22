@@ -13,27 +13,27 @@ percentageHeight = windowHeight / 100;
 percentageWidth = windowWidth / 100;
 
 pointtavle = document.getElementsByClassName("pointtavle")[0];
-ptMarginTop = parseInt(getComputedStyle(pointtavle).getPropertyValue("margin-top"));
-ptMarginBottom = parseInt(getComputedStyle(pointtavle).getPropertyValue("margin-bottom"));
-ptHeight = parseInt(getComputedStyle(pointtavle).height);
+ptMarginTop = parseFloat(getComputedStyle(pointtavle).getPropertyValue("margin-top"));
+ptMarginBottom = parseFloat(getComputedStyle(pointtavle).getPropertyValue("margin-bottom"));
+ptHeight = parseFloat(getComputedStyle(pointtavle).height);
 
 ptTotalHeight = ptMarginTop + ptMarginBottom + ptHeight;
 
 resetButton = document.getElementsByClassName("reset")[0];
-rbMarginTop = parseInt(getComputedStyle(resetButton).getPropertyValue("margin-top"));
-rbMarginBottom = parseInt(getComputedStyle(resetButton).getPropertyValue("margin-bottom"));
-rbHeight = parseInt(getComputedStyle(resetButton).height);
+rbMarginTop = parseFloat(getComputedStyle(resetButton).getPropertyValue("margin-top"));
+rbMarginBottom = parseFloat(getComputedStyle(resetButton).getPropertyValue("margin-bottom"));
+rbHeight = parseFloat(getComputedStyle(resetButton).height);
 
 rbTotalHeight = rbMarginTop + rbMarginBottom + rbHeight;
 
-gameTotalWidth = parseInt(getComputedStyle(document.getElementsByClassName('col')[0]).width);
-gamePaddingLeft = parseInt(getComputedStyle(document.getElementsByClassName('col')[0]).getPropertyValue("padding-left"));
-gamePaddingRight = parseInt(getComputedStyle(document.getElementsByClassName('col')[0]).getPropertyValue("padding-right"));
+gameTotalWidth = parseFloat(getComputedStyle(document.getElementsByClassName('col')[0]).width);
+gamePaddingLeft = parseFloat(getComputedStyle(document.getElementsByClassName('col')[0]).getPropertyValue("padding-left"));
+gamePaddingRight = parseFloat(getComputedStyle(document.getElementsByClassName('col')[0]).getPropertyValue("padding-right"));
 
-gameHeight = parseInt(getComputedStyle(document.getElementsByClassName('col')[0]).height);
+gameHeight = parseFloat(getComputedStyle(document.getElementsByClassName('col')[0]).height);
 gameWidth = (gameTotalWidth-gamePaddingLeft-gamePaddingRight)
 
-ballHeight = parseInt(getComputedStyle(ball).height)/percentageHeight;
+ballHeight = parseFloat(getComputedStyle(ball).height)/percentageHeight;
 
 p1.width
 console.log(p1.width);
