@@ -12,6 +12,10 @@
   <title>Pong game</title>
 
 </head>
+<audio autoplay loop>
+  <source src="content/audio/spongebob_multilanguage.mp4" type="audio/mp4">
+  Your browser does not support the audio element.
+</audio>
 <audio id="audiopoint">
   <source src="content/audio/point.mp3" type="audio/mp3">
   Your browser does not support the audio element.
@@ -85,14 +89,15 @@
     <button type="button" class="cpu1 btn btn-outline-success" onclick="setTimeout(()=>{cpu('p1')},1000)" name="button">CPU ONE</button>
   </div>
   <div class="col-6">
-
-<button type="button" class="cpu2 btn btn-outline-success" onclick="setTimeout(()=>{cpu('p2')},1000)" name="button">CPU TWO</button>
+    <button type="button" class="cpu2 btn btn-outline-success" onclick="setTimeout(()=>{cpu('p2')},1000)" name="button">CPU TWO</button>
 </div>
 </div>
 </div>
 </div>
   <script src="content/js/reset.js"></script>
   <script src="content/js/controller.js"></script>
+  <script src="content/js/youtubevideo.js"></script>
+
   <script src="content/js/cpu.js"></script>
 
 
