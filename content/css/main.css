@@ -69,10 +69,27 @@ user-select: none;
 .Instruktion {
   text-align: center;
 }
-body{
-  background-image:url("../image/background1.png");
-  background-repeat:repeat;
+
+body, html {
+  height: 100%!important;
+  margin: 0!important;
+  margin-top: -5px!important;
+  width: 100%!important;
 }
+
+.bg {
+  /* The image used */
+  background-image:url("../image/test.svg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .sizeForm1, .sizeForm2{
   margin-top:5px;
   width:25vh!important;
@@ -80,7 +97,20 @@ body{
   display: block!important;
   margin-left: auto!important;
   margin-right: auto!important;
-  background-image:url("../image/background1.png")!important;
+
+  /* background-image:url("../image/background1.png")!important; */
+}
+input {
+  border: #000!important;
+  padding: 10px!important;
+  font-size: 1.2em!important;
+  width: 100%!important;
+  background-color: #28a745!important;
+
+}
+input::placeholder {
+  color: #fff!important;
+
 }
 .venom{
   bottom:0;
