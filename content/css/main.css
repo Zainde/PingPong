@@ -163,14 +163,29 @@ input::placeholder {
 }
 .indexbody{
   background-color: lightblue;
+  display: grid;
 }
 .text{
+  display: grid;
+grid-template-columns: 80% 20%;
+grid-column-gap: 20px;
+grid-template-rows: auto;
   border: 1px solid black;
   border-radius: 5%;
   background-color: rgb(131, 182, 47);
   width: 60%;
   margin-left: 20%;
-  margin-top:10%;
+  margin-top:15%;
+  margin-bottom: 10%;
+}
+.styletext{
+  margin-left: 2%;
+  text-align: center;
+
+}
+.stylepicture{
+  display: grid;
+  margin-top: 30%;
 }
 
 
