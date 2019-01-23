@@ -102,7 +102,8 @@ if(map.ArrowDown){
 
 // function to start the balls movement
 function ballstart() {
-countTime=0
+  document.getElementById('b_music').play();
+  countTime=0
   setInterval(()=> {
     if (countTime === 0) {
       ballSpeed();
