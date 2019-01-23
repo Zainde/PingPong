@@ -4,6 +4,8 @@ const p1 = document.getElementById("p1");
 const ball = document.getElementById("ball");
 var audio = document.getElementById("audiopoint");
 var bat = document.getElementById("audiobat");
+document.getElementById('b_music').volume = 0.5;
+
 
 windowHeight = window.innerHeight;
 windowWidth = window.innerWidth;
