@@ -14,7 +14,7 @@
   text-align: center;
   width: 20%;
   /* margin-left: 39%; */
-  color: #28a745;
+  color: #dddddd;
   margin-top: 10px;
   display: block;
   margin-left: auto;
@@ -23,6 +23,7 @@
   font-family: 'ZCOOL QingKe HuangYou', cursive;
   font-weight: 400;
   letter-spacing: 10px;
+  background-color: rgba(131, 182, 47, 0.59);
 
   /* width: 50%; */
 }
@@ -37,8 +38,7 @@
 }
 
 .reset {
-  color: white;
-  background-color: black;
+  color: #ddd;
   border-radius: 10px;
   font-size: 2em;
   margin-left: 20px;
@@ -48,6 +48,7 @@
   display: block!important;
   margin-left: auto!important;
   margin-right: auto!important;
+  background-color: rgba(131, 182, 47, 0.59);
 
 }
 
@@ -133,19 +134,21 @@ input::placeholder {
   display: block!important;
 }
 .cpu1{
+  color: #fff;
   display: block!important;
   margin-left: auto!important;
   margin-right: 0!important;
   margin-bottom:0!important;
   margin-top: 15vh;
+  background-color: rgba(131, 182, 47, 0.80);
 }
 .cpu2{
+  color: #fff;
   display: block!important;
   margin-left: 0!important;
   margin-right: auto!important;
   margin-top: 15vh;
-
-
+  background-color: rgba(131, 182, 47, 0.80);
 }
 
 .bob1{
