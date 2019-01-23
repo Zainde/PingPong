@@ -169,13 +169,34 @@ input::placeholder {
 }
 .indexbody{
   background-color: lightblue;
+  display: grid;
 }
 .text{
+  font-family: arial;
+  font-weight: 400;
+  letter-spacing: 2px;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-column-gap: 20px;
+  grid-template-rows: auto;
   border: 1px solid black;
   border-radius: 5%;
   background-color: rgb(131, 182, 47);
   width: 60%;
   margin-left: 20%;
+}
+.text h1, h2, h3{
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
   margin-top:10%;
+  margin-bottom: 10%;
+}
+.styletext{
+  margin-left: 2%;
+  text-align: center;
+
+}
+.stylepicture{
+  display: grid;
+  margin-top: 30%;
 }
 /*# sourceMappingURL=main.css.map */
