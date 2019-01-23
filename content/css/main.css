@@ -161,6 +161,17 @@ input::placeholder {
   height: 26vh;
 
 }
+.indexbody{
+  background-color: lightblue;
+}
+.text{
+  border: 1px solid black;
+  border-radius: 5%;
+  background-color: rgb(131, 182, 47);
+  width: 60%;
+  margin-left: 20%;
+  margin-top:10%;
+}
 
 
 /*# sourceMappingURL=main.css.map */
