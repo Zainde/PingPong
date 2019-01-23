@@ -16,6 +16,9 @@ pointtavle = document.getElementsByClassName("pointtavle")[0];
 ptMarginTop = parseFloat(getComputedStyle(pointtavle).getPropertyValue("margin-top"));
 ptMarginBottom = parseFloat(getComputedStyle(pointtavle).getPropertyValue("margin-bottom"));
 ptHeight = parseFloat(getComputedStyle(pointtavle).height);
+console.log(ptHeight);
+
+document
 
 ptTotalHeight = ptMarginTop + ptMarginBottom + ptHeight;
 
@@ -104,7 +107,7 @@ if(map.ArrowDown){
 
 // function to start the balls movement
 function ballstart() {
-  document.getElementById('b_music').play();
+  // document.getElementById('b_music').play();
   countTime=0
   setInterval(()=> {
     if (countTime === 0) {
@@ -300,7 +303,7 @@ if (ydegrees < 1 && ydegrees > -1) {
     }
   }
 // makes the ball confined to the game, so it can't go over or under the sides
-  if (parseInt(ball.style.top) <= gameTop && ydegrees < 0 || parseInt(ball.style.top) >= gameBottom + gameTop / 2 && ydegrees > 0) {
+  if (parseInt(ball.style.top) <= gameTop && ydegrees < 0 || parseInt(ball.style.top) >= gameBottom + gameTop - (gamemarginHeight/percentageHeight) && ydegrees > 0) {
     ydegrees = ydegrees * -1;
   }
 // makes the ball move continuously in the given direction
