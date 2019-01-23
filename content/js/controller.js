@@ -106,6 +106,8 @@ if(map.ArrowDown){
 function ballstart() {
   // document.getElementById('b_music').play();
   countTime=0
+  ydeg()
+
   setInterval(()=> {
     if (countTime === 0) {
       ballSpeed();
@@ -113,6 +115,8 @@ function ballstart() {
   }, 40);
 };
 // some math to calculate the ball movement along the x axis
+function ydeg() {
+
 vx = Math.random() * 500 - 250;
 if (vx < 25 && vx > -25) {
   if (vx < 25 && vx > 0) {
@@ -138,7 +142,8 @@ if (vx<0) {
   }
 }
 // math used to calculate the balls movement along the y axis
-ydegrees = vy/vx;
+  ydegrees = vy/vx;
+}
 
 // old code, should work fine without it, test and delete afterwards!!!
 // if (ydegrees < 1 && ydegrees > -1) {
@@ -323,6 +328,7 @@ if (ydegrees < 1 && ydegrees > -1) {
       document.getElementById("scoreboard2").innerHTML = ++num1;
       ball.style.top = startTopBall+"vh"
       ball.style.left = startLeftBall+"vw"
+      ydeg();
       // if there's more than 10 points end the game
       if (num1 == 10) {
         reset();
@@ -341,6 +347,7 @@ if (ydegrees < 1 && ydegrees > -1) {
       document.getElementById("scoreboard1").innerHTML = ++num2;
       ball.style.top = startTopBall+"vh"
       ball.style.left = startLeftBall+"vw"
+      ydeg();
       // if there's more than 10 points end the game
       if (num2 == 10) {
         reset();
