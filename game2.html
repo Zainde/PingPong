@@ -8,12 +8,11 @@
   <link rel="stylesheet" href="content/css/main.css">
   <link rel="stylesheet" href="content/css/bootstrap.css">
   <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
-
   <title>Pong game</title>
 
 </head>
-<audio id="b_music" autoplay loop>
-  <source src="content/audio/spongebob1_multilanguage.mp3" type="audio/mp3">
+<audio id="b_music" loop>
+  <source src="content/audio/spongebob_multilanguage.mp3" type="audio/mp3">
   Your browser does not support the audio element.
 </audio>
 
@@ -39,7 +38,7 @@
       <input id="pl1" style="color:white;" type="text" class="form-control sizeForm1" placeholder="PLAYER 1">
     </div>
     <div class="col-sm">
-      <button class="reset btn btn-outline-success" onclick="reset()">RESET GAME</button>
+      <button class="reset btn" onclick="reset()">RESET GAME</button>
     </div>
     <div class="col-sm">
       <input id="pl2" style="color:white;" type="text" class="form-control sizeForm2" ID="MyLabel" placeholder="PLAYER 2">
@@ -77,13 +76,21 @@
 
 
 
-  <div class="container-fluid">
+  <div class="container-fluid down">
     <div class="row">
       <div class="col-6">
-    <button type="button" class="cpu1 btn btn-outline-success" onclick="setTimeout(()=>{cpu('p1')},1000)" name="button">CPU ONE</button>
+    <button type="button" class="cpu1 btn" onclick="setTimeout(()=>{cpu('p1', 55)},1000)" name="button">CPU ONE easy</button>
+    <button type="button" class="cpu1 btn" onclick="setTimeout(()=>{cpu('p1', 40)},1000)" name="button">CPU ONE medium</button>
+    <button type="button" class="cpu1 btn" onclick="setTimeout(()=>{cpu('p1', 25)},1000)" name="button">CPU ONE hard</button>
+    <button type="button" class="cpu1 btn" onclick="setTimeout(()=>{cpu('p1', 10)},1000)" name="button">CPU ONE extreme</button>
+
   </div>
   <div class="col-6">
-    <button type="button" class="cpu2 btn btn-outline-success" onclick="setTimeout(()=>{cpu('p2')},1000)" name="button">CPU TWO</button>
+    <button type="button" class="cpu2 btn" onclick="setTimeout(()=>{cpu('p2', 55)},1000)" name="button">CPU TWO easy</button>
+    <button type="button" class="cpu2 btn" onclick="setTimeout(()=>{cpu('p2', 40)},1000)" name="button">CPU TWO medium</button>
+    <button type="button" class="cpu2 btn" onclick="setTimeout(()=>{cpu('p2', 25)},1000)" name="button">CPU TWO hard</button>
+    <button type="button" class="cpu2 btn" onclick="setTimeout(()=>{cpu('p2', 10)},1000)" name="button">CPU TWO extreme</button>
+
 </div>
 </div>
 </div>
