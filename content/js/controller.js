@@ -306,7 +306,7 @@ if (ydegrees < 1 && ydegrees > -1) {
     }
   }
 // makes the ball confined to the game, so it can't go over or under the sides
-  if (parseInt(ball.style.top) <= gameTop - ballHeight/percentageHeight && ydegrees < 0 || parseInt(ball.style.top) + ballHeight >= gameBottom + gameTop - (gamemarginHeight/percentageHeight) - (ballHeight/percentageHeight) && ydegrees > 0) {
+  if (parseInt(ball.style.top) <= gameTop - ballHeight/percentageHeight && ydegrees < 0 || parseInt(ball.style.top) >= gameBottom + gameTop - (gamemarginHeight/percentageHeight) - (ballHeight/percentageHeight) && ydegrees > 0) {
     ydegrees = ydegrees * -1;
   }
 // makes the ball move continuously in the given direction
