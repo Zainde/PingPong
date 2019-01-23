@@ -200,15 +200,15 @@ if (ydegrees < 1 && ydegrees > -1) {
 }
 // making sure the balls moves as it should when it hits the p2 controller on different positions
   if (parseInt(ball.style.left) >= parseInt(p2.style.left) && parseInt(ball.style.left) <= parseInt(p2.style.left)) {
-    if (parseInt(ball.style.top) <= parseInt(p2.style.top) + p2BatHeight && parseInt(ball.style.top) + ballHeight >= parseInt(p2.style.top)) {
+    if (parseInt(ball.style.top) - ballHeight/2 <= parseInt(p2.style.top) + p2BatHeight && parseInt(ball.style.top) + ballHeight/2 >= parseInt(p2.style.top)) {
       // makes sure the ball changes directions along the x axis when it "hits" the controller
       vx = vx * -1;
       bat.play();
 
 
       // making the ball go in different angles when hitting different parts of the controller
-      if (parseInt(ball.style.top) + ballHeight >= parseInt(p2.style.top) + p2BatHeight/2) {
-        if (parseInt(ball.style.top) + ballHeight >= parseInt(p2.style.top) + (p2BatHeight/8)*7) {
+      if (parseInt(ball.style.top) + ballHeight/2 >= parseInt(p2.style.top) + p2BatHeight/2) {
+        if (parseInt(ball.style.top) + ballHeight/2 >= parseInt(p2.style.top) + (p2BatHeight/8)*7) {
 // making the ball move more straight when hitting the middle of the controller
 // top of controller
              if (ydegrees > 0) {
@@ -218,7 +218,7 @@ if (ydegrees < 1 && ydegrees > -1) {
              }
 
         }
-        else if (parseInt(ball.style.top) + ballHeight >= parseInt(p2.style.top) + (p2BatHeight/8)*5) {
+        else if (parseInt(ball.style.top) + ballHeight/2 >= parseInt(p2.style.top) + (p2BatHeight/8)*5) {
         } else{
 // making the ball move less straight when hitting the top part of the controller
 // just under top
@@ -229,8 +229,8 @@ if (ydegrees < 1 && ydegrees > -1) {
           }
         }
       } else {
-        if (parseInt(ball.style.top) <= parseInt(p2.style.top) + p2BatHeight/2){
-          if (parseInt(ball.style.top) < parseInt(p2.style.top) + (p2BatHeight/8)) {
+        if (parseInt(ball.style.top) - ballHeight/2 <= parseInt(p2.style.top) + p2BatHeight/2){
+          if (parseInt(ball.style.top) + ballHeight/2 > parseInt(p2.style.top) + (p2BatHeight/8)) {
             // making the ball move more straight when hitting the middle of the controller
 
             if (ydegrees > 0) {
@@ -239,7 +239,7 @@ if (ydegrees < 1 && ydegrees > -1) {
               ydegrees = ydegrees * 1.5;
             }
           }
-          else if (parseInt(ball.style.top) == parseInt(p2.style.top) +(p2BatHeight/8)*3) {
+          else if (parseInt(ball.style.top) <= parseInt(p2.style.top) +(p2BatHeight/8)*3) {
           } else{
             // making the ball move less straight when hitting the bottom part of the controller
             if (ydegrees > 0) {
@@ -254,13 +254,13 @@ if (ydegrees < 1 && ydegrees > -1) {
   }
   // making sure the balls moves as it should when it hits the p1 controller on different positions
   if (parseInt(ball.style.left) >= parseInt(p1.style.left) && parseInt(ball.style.left) <= parseInt(p1.style.left)) {
-    if (parseInt(ball.style.top) <= parseInt(p1.style.top) + p1BatHeight && parseInt(ball.style.top) + ballHeight >= parseInt(p1.style.top)) {
+    if (parseInt(ball.style.top) - ballHeight/2 <= parseInt(p1.style.top) + p1BatHeight && parseInt(ball.style.top) + ballHeight/2 >= parseInt(p1.style.top)) {
       bat.play();
       // makes sure the ball changes directions along the x axis when it "hits" the controller
       vx = vx * -1;
       // making the ball go in different angles when hitting different parts of the controller
-      if (parseInt(ball.style.top) + ballHeight >= parseInt(p1.style.top) + p1BatHeight/2) {
-        if (parseInt(ball.style.top) + ballHeight >= parseInt(p1.style.top) + (p1BatHeight/8)*7) {
+      if (parseInt(ball.style.top) + ballHeight/2 >= parseInt(p1.style.top) + p1BatHeight/2) {
+        if (parseInt(ball.style.top) + ballHeight/2 >= parseInt(p1.style.top) + (p1BatHeight/8)*7) {
     // making the ball move more straight when hitting the middle of the controller
     if (ydegrees > 0) {
       ydegrees = ydegrees * 1.5;
@@ -270,7 +270,7 @@ if (ydegrees < 1 && ydegrees > -1) {
 
 
         }
-        else if (parseInt(ball.style.top) + ballHeight >= parseInt(p1.style.top) + (p1BatHeight/8)*5) {
+        else if (parseInt(ball.style.top) + ballHeight/2 >= parseInt(p1.style.top) + (p1BatHeight/8)*5) {
 
         } else{
       // making the ball move less straight when hitting the top part of the controller
@@ -282,8 +282,8 @@ if (ydegrees < 1 && ydegrees > -1) {
           }
         }
       } else {
-        if (parseInt(ball.style.top) <= parseInt(p1.style.top) + p1BatHeight/2){
-          if (parseInt(ball.style.top) + ballHeight > parseInt(p1.style.top) + p1BatHeight/8) {
+        if (parseInt(ball.style.top) - ballHeight/2 <= parseInt(p1.style.top) + p1BatHeight/2){
+          if (parseInt(ball.style.top) + ballHeight/2 > parseInt(p1.style.top) + p1BatHeight/8) {
             // making the ball move more straight when hitting the middle of the controller
 
             if (ydegrees > 0) {
@@ -292,7 +292,7 @@ if (ydegrees < 1 && ydegrees > -1) {
               ydegrees = ydegrees * 1.5;
             }
           }
-          else if (parseInt(ball.style.top) <= parseInt(p1.style.top) + (p1BatHeight/8)*3) {
+          else if (parseInt(ball.style.top) - ballHeight/2 <= parseInt(p1.style.top) + (p1BatHeight/8)*3) {
           } else{
             // making the ball move less straight when hitting the bottom part of the controller
             if (ydegrees > 0) {

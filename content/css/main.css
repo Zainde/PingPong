@@ -139,7 +139,7 @@ input::placeholder {
   margin-left: auto!important;
   margin-right: 0!important;
   margin-bottom:0!important;
-  margin-top: 15vh;
+  /* margin-top: 15vh; */
   background-color: rgba(131, 182, 47, 0.80);
 }
 .cpu2{
@@ -147,10 +147,16 @@ input::placeholder {
   display: block!important;
   margin-left: 0!important;
   margin-right: auto!important;
-  margin-top: 15vh;
+  /* margin-top: 15vh; */
   background-color: rgba(131, 182, 47, 0.80);
 }
 
+.down{
+  padding-top: 50px;
+}
+.down button{
+  margin: 5px;
+}
 .bob1{
   width:200px;
   position:relative;
@@ -172,6 +178,4 @@ input::placeholder {
   margin-left: 20%;
   margin-top:10%;
 }
-
-
 /*# sourceMappingURL=main.css.map */
