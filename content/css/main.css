@@ -152,7 +152,7 @@ input::placeholder {
 }
 
 .down{
-margin-top:80px;
+  position: absolute;
 }
 .down1{
   float:right;

@@ -5,6 +5,7 @@ const ball = document.getElementById("ball");
 var audio = document.getElementById("audiopoint");
 var bat = document.getElementById("audiobat");
 const clothesline = document.getElementById('clothesline');
+const cpubuttons = document.getElementsByClassName('down')[0];
 // make the background music more quiet
 document.getElementById('b_music').volume = 0.5;
 // get height of window
@@ -55,6 +56,8 @@ gameTop=(ptTotalHeight + rbTotalHeight + gamemarginHeight) / percentageHeight
 gameBottom = gameHeight / percentageHeight
 startTopBall= gameTop + (gameBottom / 2) - ballHeight/2
 // style where the ball and bats need to start
+console.log(gamemarginHeight);
+cpubuttons.style.top = gameBottom + gameTop - (gamemarginHeight/percentageHeight) + cpubuttons.clientHeight/percentageHeight + "vh"
 clothesline.style.top= gameTop - 2 + "vh";
 ball.style.top = startTopBall+"vh"
 ball.style.left = startLeftBall+"vw"
