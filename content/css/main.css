@@ -152,7 +152,10 @@ input::placeholder {
 }
 
 .down{
-
+margin-top:55px;
+}
+.down1{
+  float:right;
 }
 .down button{
   margin: 5px;

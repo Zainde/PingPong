@@ -55,9 +55,7 @@
     <img id="ball" onclick="ballstart()" src="content/image/lastBold.svg" style="position:absolute;left:0vw;top:0vh;width:8vh;height:8vh;z-index:9000;" />
 </div>
 </div>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col">
+
   <!-- <img src="content/image/test.svg" alt="" class="test"> -->
 
 <!--
@@ -77,25 +75,36 @@
   <div class="container-fluid down">
     <div class="row">
       <div class="col-6">
+    <!-- <button type="button" class="cpu1 btn" onclick="setTimeout(()=>{cpu('p1', 55)},1000)" name="button">CPU ONE easy</button>
+    <button type="button" class="cpu1 btn" onclick="setTimeout(()=>{cpu('p1', 40)},1000)" name="button">CPU ONE medium</button>
+    <button type="button" class="cpu1 btn" onclick="setTimeout(()=>{cpu('p1', 25)},1000)" name="button">CPU ONE hard</button>
+    <button type="button" class="cpu1 btn" onclick="setTimeout(()=>{cpu('p1', 10)},1000)" name="button">CPU ONE extreme</button> -->
+  <div class="btn-group down1" role="group" aria-label="Basic example">
     <button type="button" class="cpu1 btn" onclick="setTimeout(()=>{cpu('p1', 55)},1000)" name="button">CPU ONE easy</button>
     <button type="button" class="cpu1 btn" onclick="setTimeout(()=>{cpu('p1', 40)},1000)" name="button">CPU ONE medium</button>
     <button type="button" class="cpu1 btn" onclick="setTimeout(()=>{cpu('p1', 25)},1000)" name="button">CPU ONE hard</button>
     <button type="button" class="cpu1 btn" onclick="setTimeout(()=>{cpu('p1', 10)},1000)" name="button">CPU ONE extreme</button>
-
   </div>
-  <div class="col-6">
-    <button type="button" class="cpu2 btn" onclick="setTimeout(()=>{cpu('p2', 55)},1000)" name="button">CPU TWO easy</button>
-    <button type="button" class="cpu2 btn" onclick="setTimeout(()=>{cpu('p2', 40)},1000)" name="button">CPU TWO medium</button>
-    <button type="button" class="cpu2 btn" onclick="setTimeout(()=>{cpu('p2', 25)},1000)" name="button">CPU TWO hard</button>
-    <button type="button" class="cpu2 btn" onclick="setTimeout(()=>{cpu('p2', 10)},1000)" name="button">CPU TWO extreme</button>
+</div>
+
+
+
+
+  <div class="col-6 ">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="cpu2 btn" onclick="setTimeout(()=>{cpu('p2', 55)},1000)" name="button">CPU TWO easy</button>
+      <button type="button" class="cpu2 btn" onclick="setTimeout(()=>{cpu('p2', 40)},1000)" name="button">CPU TWO medium</button>
+      <button type="button" class="cpu2 btn" onclick="setTimeout(()=>{cpu('p2', 25)},1000)" name="button">CPU TWO hard</button>
+      <button type="button" class="cpu2 btn" onclick="setTimeout(()=>{cpu('p2', 10)},1000)" name="button">CPU TWO extreme</button>
+    </div>
+  </div>
+</div>
+
+
 
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<script src="https://ajax.googleapis.com/libs/jquery/2.1.3/jquery.min.js"></script>
 
 
   <script src="content/js/reset.js"></script>
